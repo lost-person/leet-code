@@ -49,20 +49,7 @@ class Solution {
         //     }
         // }
         // return list;
-        // 方法2 动态规划 python java写的有点烦
-        // """
-        // :type n: int
-        // :rtype: List[str]
-        // """
  
-        // r = [[] for i in range(n+1)]
-        // r[0] = [""]
- 
-        // for i in range(1, n+1):
-        //     for j in range(i):
-        //         r[i] += ['('+k+')'+l for k in r[j] for l in r[i-j-1]]
- 
-        // return r[n]
         List<List<String>> res = new ArrayList<>();
         List<String> tmpList = new ArrayList<>();
         tmpList.add("");

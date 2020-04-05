@@ -128,7 +128,7 @@ class Solution:
                     else:
                         print_reverse(cur.left, prev)
                         prev.right = None
-                        cur = cur.left
+                        cur = cur.right
                 else:
                     cur = cur.right
         
