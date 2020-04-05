@@ -7,7 +7,7 @@ class Solution:
 
         left, right = 0, len(nums)
         while left < right:
-            mid = left + (right - left) >> 1
+            mid = left + ((right - left) >> 1)
             if nums[mid] < target:
                 left = mid + 1
             else:
@@ -19,7 +19,7 @@ class Solution:
         # 如果这里能够运行, 肯定是找到了target的
         left, right = 0, len(nums)
         while left < right:
-            mid = left + (right - left) >> 1
+            mid = left + ((right - left) >> 1)
             # note that change to <=
             if nums[mid] <= target:
                 left = mid + 1
@@ -32,7 +32,7 @@ class Solution:
 
         def lower_bound(array, left, right, value):
             while left < right: # 返回[first, last)内第一个不小于value的值的位置
-                mid = left + (right - left) >> 1 # 搜索区间[first, last)不为空
+                mid = left + ((right - left) >> 1) # 搜索区间[first, last)不为空
                 if nums[mid] < target:
                     left = mid + 1
                 else:
@@ -42,7 +42,7 @@ class Solution:
 
         def upper_bound(array, left, right, value):
             while left < right: # 返回[first, last)内第一个大于value的值的位置
-                mid = left + (right - left) >> 1 # 搜索区间[first, last)不为空
+                mid = left + ((right - left) >> 1) # 搜索区间[first, last)不为空
                 if nums[mid] <= target:
                     left = mid + 1
                 else:
