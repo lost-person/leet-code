@@ -26,7 +26,7 @@ class Solution:
         #     if n == 0: return 1
         #     if n == 1: return x
             
-        #     hal_res = self.myPow(x, n // 2)
+        #     hal_res = fastPow(x, n // 2)
 
         #     if n % 2 != 0:
         #         res = x * hal_res * hal_res
