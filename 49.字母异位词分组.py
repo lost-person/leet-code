@@ -5,6 +5,8 @@
 #
 
 # @lc code=start
+from collections import defaultdict
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # # 字符串排序
@@ -14,7 +16,7 @@ class Solution:
         # return ans.values()
 
         # 统计字符数
-        ans = collections.defaultdict(list)
+        ans = defaultdict(list)
         for s in strs:
             count = [0] * 26
             for c in s:
