@@ -8,7 +8,7 @@ def solve():
         T -= 1
         
         n = int(input())
-        nums = sys.stdin.readline().split(" ")
+        nums = list(map(int, input().split()))
         nums = [int(num) for num in nums]
         
         dpl = [1] * n
@@ -20,7 +20,7 @@ def solve():
                 if nums[i] < nums[j]:
                     dpl[i] = max(dpl[i], dpl[j] + 1)
 
-        for i in range(n-1, -1, -1):
+        for i in range(n - 1, -1, -1):
             for j in range(n - 1, i, -1):
                 if nums[i] < nums[j]:
                     dpr[i] = max(dpr[i], dpr[j] + 1)

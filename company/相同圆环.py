@@ -2,13 +2,6 @@
 
 import sys
 
-def judge(circles, index_list, index1, index2):
-    if sum(circles[index1]) != sum(circles[index2]):
-        return False
-
-    return sum(map(lambda x, y: x - y, index_list[index1], index_list[index2])) == 0
-    
-
 def solve():
     T = int(input())
     while T > 0:
