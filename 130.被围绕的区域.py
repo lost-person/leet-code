@@ -5,97 +5,73 @@
 #
 
 # @lc code=start
+
+from collections import deque
+
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
         """
         Do not return anything, modify board in-place instead.
         """
-        if not board or not board[0]: return
-        m, n = len(board), len(board[0])
-        # 因为不会在边界
-        if m <= 2 or n <= 2: return
+        if not board:
+            return
+        
+        n, m = len(board), len(board[0])
 
-        # def dfs(i, j):
-        #     """递归
-        #     """
-        #     if i < 0 or i > m - 1 or j < 0 or j > n - 1 or board[i][j] == 'X' or board[i][j] == '#':
-        #         return
+        def dfs(x, y):
+            if not 0 <= x < n or not 0 <= y < m or board[x][y] != 'O':
+                return
             
-        #     board[i][j] = '#'
-        #     dfs(i - 1, j)
-        #     dfs(i, j - 1)
-        #     dfs(i + 1, j)
-        #     dfs(i, j + 1)
-
-        # def dfs(i, j):
-        #     """非递归
-        #     """
-        #     board[i][j] = "#"
-        #     tmp_list = [(i, j)]
-        #     while tmp_list:
-        #         cur_i, cur_j = tmp_list[-1]
-
-        #         # 上
-        #         if cur_i - 1 >= 0 and board[cur_i - 1][cur_j] == 'O':
-        #             board[cur_i - 1][cur_j] = '#'
-        #             tmp_list.append((cur_i - 1, cur_j))
-        #             continue
-        #         # 下
-        #         if cur_i + 1 < m and board[cur_i + 1][cur_j] == 'O':
-        #             board[cur_i + 1][cur_j] = "#"
-        #             tmp_list.append((cur_i + 1, cur_j))
-        #             continue
-        #         # 左
-        #         if cur_j - 1 >= 0 and board[cur_i][cur_j - 1] == 'O':
-        #             board[cur_i][cur_j - 1] = "#"
-        #             tmp_list.append((cur_i, cur_j - 1))
-        #             continue
-        #         # 右
-        #         if cur_j + 1 < n and board[cur_i][cur_j + 1] == 'O':
-        #             board[cur_i][cur_j + 1] = "#"
-        #             tmp_list.append((cur_i, cur_j + 1))
-        #             continue
-        #         tmp_list.pop()
+            board[x][y] = "A"
+            dfs(x + 1, y)
+            dfs(x - 1, y)
+            dfs(x, y + 1)
+            dfs(x, y - 1)
         
-        def bfs(i, j):
-            """非递归
-            """
-            board[i][j] = "#"
-            tmp_list = [(i, j)]
-            while tmp_list:
-                cur_i, cur_j = tmp_list.pop()
+        for i in range(n):
+            dfs(i, 0)
+            dfs(i, m - 1)
+        
+        for i in range(m - 1):
+            dfs(0, i)
+            dfs(n - 1, i)
+        
+        for i in range(n):
+            for j in range(m):
+                if board[i][j] == "A":
+                    board[i][j] = "O"
+                elif board[i][j] == "O":
+                    board[i][j] = "X"
 
-                # 上
-                if cur_i - 1 >= 0 and board[cur_i - 1][cur_j] == 'O':
-                    board[cur_i - 1][cur_j] = '#'
-                    tmp_list.append((cur_i - 1, cur_j))
-                # 下
-                if cur_i + 1 < m and board[cur_i + 1][cur_j] == 'O':
-                    board[cur_i + 1][cur_j] = "#"
-                    tmp_list.append((cur_i + 1, cur_j))
-                # 左
-                if cur_j - 1 >= 0 and board[cur_i][cur_j - 1] == 'O':
-                    board[cur_i][cur_j - 1] = "#"
-                    tmp_list.append((cur_i, cur_j - 1))
-                # 右
-                if cur_j + 1 < n and board[cur_i][cur_j + 1] == 'O':
-                    board[cur_i][cur_j + 1] = "#"
-                    tmp_list.append((cur_i, cur_j + 1))
+        if not board:
+            return
+        
+        n, m = len(board), len(board[0])
+        que = deque()
+        for i in range(n):
+            if board[i][0] == "O":
+                que.append((i, 0))
+            if board[i][m - 1] == "O":
+                que.append((i, m - 1))
+        for i in range(m - 1):
+            if board[0][i] == "O":
+                que.append((0, i))
+            if board[n - 1][i] == "O":
+                que.append((n - 1, i))
+        
+        while que:
+            x, y = que.popleft()
+            board[x][y] = "A"
+            for mx, my in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
+                if 0 <= mx < n and 0 <= my < m and board[mx][my] == "O":
+                    que.append((mx, my))
+        
+        for i in range(n):
+            for j in range(m):
+                if board[i][j] == "A":
+                    board[i][j] = "O"
+                elif board[i][j] == "O":
+                    board[i][j] = "X"
 
-        
-        # 遍历
-        for i in range(0, m):
-            for j in range(0, n):
-                if not (0 < i < m - 1 and 0 < j < n - 1) and board[i][j] == 'O':
-                    bfs(i, j)
-        
-        for i in range(0, m):
-            for j in range(0, n):
-                if board[i][j] == 'O':
-                    board[i][j] = 'X'
-                
-                if board[i][j] == '#':
-                    board[i][j] = 'O'
-        
 # @lc code=end
 

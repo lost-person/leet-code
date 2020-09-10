@@ -6,6 +6,7 @@
 
 # @lc code=start
 from collections import deque
+
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         # 当数组逆序时，退化为 O(n * k)

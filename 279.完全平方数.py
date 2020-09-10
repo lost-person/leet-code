@@ -30,6 +30,7 @@ class Solution:
                         return step + 1
                     elif val > 0:
                         queue.appendleft(val)
+        return step
 
         # 动态规划
         # dp = list(range(n + 1))

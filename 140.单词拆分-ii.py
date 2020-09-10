@@ -5,7 +5,8 @@
 #
 
 # @lc code=start
-import collections
+from collections import deque
+
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         # 递归

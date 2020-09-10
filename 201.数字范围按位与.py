@@ -24,7 +24,7 @@ class Solution:
 
         while m < n:
             n &= (n - 1)
-        return m & n
+        return n
 
 # @lc code=end
 

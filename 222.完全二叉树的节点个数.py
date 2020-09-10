@@ -50,10 +50,7 @@ class Solution:
                 left = pivot + 1
             else:
                 right = pivot - 1
-        
 
         return (2 ** d - 1) + left
-
-
 # @lc code=end
 

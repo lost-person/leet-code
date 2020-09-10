@@ -5,14 +5,14 @@
 #
 
 # @lc code=start
-import collections
+from collections import Counter
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if not s or not t: return ""
 
         # 统计 t 中各字符及其数量
-        dict_t = collections.Counter(t)
+        dict_t = Counter(t)
         required = len(dict_t)
         
         # 窗口

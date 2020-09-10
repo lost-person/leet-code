@@ -14,6 +14,9 @@ class Node:
         self.right = right
         self.next = next
 """
+
+from collections import deque
+
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
@@ -21,7 +24,7 @@ class Solution:
         
         # Initialize a queue data structure which contains
         # just the root of the tree
-        Q = collections.deque([root])
+        Q = deque([root])
         
         # Outer while loop which iterates over 
         # each level

@@ -39,6 +39,7 @@ class Solution:
         for pre, cur in prerequisites:
             adj_matrix[pre].append(cur)
 
+        is_cycle = False
         def dfs(pre: int):
             nonlocal is_cycle
             
@@ -56,7 +57,6 @@ class Solution:
             res.append(pre)
             return
         
-        is_cycle = False
         for pre in range(numCourses):
             if is_cycle:
                 break
