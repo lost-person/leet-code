@@ -43,7 +43,7 @@ class Solution:
         
         # dp[0][0] = 0
         # for i in range(1, n + 1):
-        #     for j in range(1, m + 1):
+        #     for j in range(1, min(i, m) + 1):
         #         for k in range(i):
         #             dp[i][j] = min(dp[i][j], max(dp[k][j - 1], _sum[i] - _sum[k]))
         

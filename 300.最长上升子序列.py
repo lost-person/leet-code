@@ -10,9 +10,9 @@ class Solution:
         if not nums:
             return 0
         
-        n = len(nums)
-        if n == 1:
-            return n
+        num = len(nums)
+        if num == 1:
+            return num
         
         # dp
         # dp = [1] * n
@@ -23,19 +23,23 @@ class Solution:
         
         # return max(dp)
 
-        # 二分加dp
-        dp, res = [0] * n, 0
+        # 二分 + 贪心
+        d = []
         for num in nums:
-            i, j = 0, res
-            while i < j:
-                m = i + ((j - i) >> 1)
-                if dp[m] < num:
-                    i = m + 1
-                else:
-                    j = m
-            dp[i] = num
-            if j == res:
-                res += 1
-        return res
+            if not d or num > d[-1]:
+                d.append(num)
+            else:
+                l, r = 0, len(d) - 1
+                loc = r
+                while l <= r:
+                    mid = (l + r) // 2
+                    if d[mid] >= num:
+                        loc = mid
+                        r = mid - 1
+                    else:
+                        l = mid + 1
+                d[loc] = num
+        return len(d)
+
 # @lc code=end
 

@@ -15,7 +15,7 @@ class Solution:
             for c in s:
                 if c == "(": cnt += 1
                 elif c == ")": cnt -= 1
-                if cnt < 0: return False  # 只用中途cnt出现了负值，你就要终止循环，已经出现非法字符了
+                if cnt < 0: return False  # 只用中途cnt出现了负值，就终止循环，已经出现非法字符了
             return cnt == 0
 
         # BFS

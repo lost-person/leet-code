@@ -14,8 +14,11 @@ class Solution:
         mask = 0
 
         for i in range(30, -1, -1):
+            # 高位到低位
             mask |= (1 << i)
             s = set()
+
+            # 保留前缀
             for num in nums:
                 s.add(num & mask)
             

@@ -67,8 +67,6 @@ class Solution:
 
         # self.res = 0
 
-        # self.res = 0
-
         # def dfs(row, col, todo):
         #     todo -= 1
         #     if todo < 0:

@@ -25,4 +25,3 @@ class Solution:
 
         return dfs(root, sum) + self.pathSum(root.left, sum) + self.pathSum(root.right, sum)
 # @lc code=end
-
