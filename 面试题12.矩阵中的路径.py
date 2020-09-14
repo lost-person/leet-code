@@ -26,8 +26,6 @@ class Solution:
             board[row][col] = c
             return False
 
-
-        
         for row in range(m):
             for col in range(n):
                 if board[row][col] == word[0]:

@@ -21,13 +21,11 @@ class MinStack:
         self.help_data.pop()
         return self.data.pop()
 
-
     def top(self) -> int:
         if not self.data:
             raise Exception("no data")
         
         return self.data[-1]
-
 
     def min(self) -> int:
         if not self.data:

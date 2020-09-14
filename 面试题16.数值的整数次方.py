@@ -15,8 +15,8 @@ class Solution:
             odd = n & 1
             n >>= 1
             if odd:
-                return x * my_pow(x, n) * my_pow(x, n)
+                return x * my_pow(x, n) ** 2
             else:
-                return my_pow(x, n) * my_pow(x, n)
+                return my_pow(x, n) ** 2
         
         return my_pow(x, n)
