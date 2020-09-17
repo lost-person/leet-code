@@ -5,14 +5,17 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:
         if not bills:
             return True
-        
+
         if bills[0] != 5:
             return False
-        
+
         five, ten = 0, 0
         for bill in bills:
             if bill == 5:
@@ -31,6 +34,7 @@ class Solution:
                 else:
                     return False
 
-        return True 
-# @lc code=end
+        return True
 
+
+# @lc code=end

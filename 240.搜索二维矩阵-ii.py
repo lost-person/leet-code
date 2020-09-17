@@ -4,6 +4,7 @@
 # [240] 搜索二维矩阵 II
 #
 
+
 # @lc code=start
 class Solution:
     def searchMatrix(self, matrix, target):
@@ -25,8 +26,8 @@ class Solution:
                 col += 1
             else:
                 row -= 1
-        
+
         return False
 
-# @lc code=end
 
+# @lc code=end

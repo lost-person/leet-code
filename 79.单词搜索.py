@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         if not (board or board[0]): return False
@@ -17,10 +20,11 @@ class Solution:
 
             # 避免重复使用
             board[i][j] += ' '
-            res = dfs(i - 1, j, word[1:]) or dfs(i + 1, j, word[1:]) or dfs(i, j - 1, word[1:]) or dfs(i, j + 1, word[1:])
+            res = dfs(i - 1, j, word[1:]) or dfs(i + 1, j, word[1:]) or dfs(
+                i, j - 1, word[1:]) or dfs(i, j + 1, word[1:])
             board[i][j] = board[i][j][:-1]
             return res
-        
+
         m, n = len(board), len(board[0])
         for i in range(m):
             for j in range(n):
@@ -28,6 +32,5 @@ class Solution:
                     if dfs(i, j, word): return True
         return False
 
-        
-# @lc code=end
 
+# @lc code=end

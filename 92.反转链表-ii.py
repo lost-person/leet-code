@@ -4,12 +4,14 @@
 # [92] 反转链表 II
 #
 
+
 # @lc code=start
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
@@ -22,7 +24,7 @@ class Solution:
         while cnt < m:
             p = p.next
             cnt += 1
-        
+
         head = p.next
         while cnt < n:
             q = head.next
@@ -32,5 +34,6 @@ class Solution:
             cnt += 1
 
         return dummy.next
-# @lc code=end
 
+
+# @lc code=end

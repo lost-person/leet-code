@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         # 哈希表
@@ -14,7 +17,7 @@ class Solution:
         # num_dict = dict()
         # for num in nums:
         #     num_dict[num] = num_dict.get(num, 0) + 1
-        
+
         # for k, v in num_dict.items():
         #     if v > half_n:
         #         return k
@@ -57,5 +60,6 @@ class Solution:
             count += (1 if num == candidate else -1)
 
         return candidate
-# @lc code=end
 
+
+# @lc code=end

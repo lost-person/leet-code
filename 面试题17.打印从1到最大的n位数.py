@@ -1,5 +1,7 @@
 # coding = utf-8
 
+from typing import List
+
 class Solution:
     def printNumbers(self, n: int) -> List[int]:
         if not n:

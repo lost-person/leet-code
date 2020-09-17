@@ -5,13 +5,16 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         if not nums or len(nums) < 3:
             return []
-        
+
         nums.sort()
-        
+
         def k_Sum(start: int, end: int, k: int, target: int):
             tmp_res = []
             if k == 2:
@@ -35,12 +38,15 @@ class Solution:
                         break
 
                     if i == start or nums[i] != nums[i - 1]:
-                        prev_tmp_res = k_Sum(i + 1, len(nums) - 1, k - 1, target - nums[i])
-                        prev_tmp_res = [[nums[i]] + prev_tmp for prev_tmp in prev_tmp_res]
+                        prev_tmp_res = k_Sum(i + 1,
+                                             len(nums) - 1, k - 1,
+                                             target - nums[i])
+                        prev_tmp_res = [[nums[i]] + prev_tmp
+                                        for prev_tmp in prev_tmp_res]
                         tmp_res.extend(prev_tmp_res)
             return tmp_res
-        
+
         return k_Sum(0, len(nums) - 1, 3, 0)
 
-# @lc code=end
 
+# @lc code=end

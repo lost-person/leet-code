@@ -4,6 +4,7 @@
 # [367] 有效的完全平方数
 #
 
+
 # @lc code=start
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
@@ -20,7 +21,7 @@ class Solution:
         #         right = mid - 1
         #     else:
         #         left = mid + 1
-        
+
         # return False
 
         # 牛顿迭代法
@@ -30,5 +31,6 @@ class Solution:
         while x * x > num:
             x = (x + num // x) >> 1
         return x * x == num
-# @lc code=end
 
+
+# @lc code=end

@@ -5,12 +5,13 @@
 #
 
 # @lc code=start
-import math
+
+
 class Solution:
     def countPrimes(self, n: int) -> int:
         if n <= 2:
             return 0
-        
+
         isPrime = [1] * n
         i = 2
         while i * i < n:
@@ -20,8 +21,8 @@ class Solution:
                     isPrime[j] = 0
                     j += i
             i += 1
-        
+
         return sum(isPrime) - 2
 
-# @lc code=end
 
+# @lc code=end

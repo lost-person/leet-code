@@ -5,12 +5,15 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def calculateMinimumHP(self, dungeon: List[List[int]]) -> int:
         res = 0
         if not dungeon or not dungeon[0]:
             return res
-        
+
         m, n = len(dungeon), len(dungeon[0])
 
         dp = [[float('inf')] * (n + 1) for _ in range(m + 1)]
@@ -18,9 +21,10 @@ class Solution:
 
         for i in range(m - 1, -1, -1):
             for j in range(n - 1, -1, -1):
-                dp[i][j] = max(1, min(dp[i + 1][j], dp[i][j + 1]) - dungeon[i][j])
+                dp[i][j] = max(1,
+                               min(dp[i + 1][j], dp[i][j + 1]) - dungeon[i][j])
 
         return dp[0][0]
+
+
 # @lc code=end
-
-

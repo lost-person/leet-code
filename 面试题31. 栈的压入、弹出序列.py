@@ -1,11 +1,17 @@
+# coding = utf-8
+
+from typing import List
+
+
 class Solution:
-    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+    def validateStackSequences(self, pushed: List[int],
+                               popped: List[int]) -> bool:
         if not pushed and not popped:
             return True
-        
+
         if len(pushed) != len(popped):
             return False
-        
+
         stack = []
         j = 0
         for num in pushed:

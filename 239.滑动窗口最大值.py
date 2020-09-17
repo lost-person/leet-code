@@ -6,6 +6,8 @@
 
 # @lc code=start
 from collections import deque
+from typing import List
+
 
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
@@ -14,7 +16,7 @@ class Solution:
         # if not k or not n: return []
 
         # if k == 1: return nums
-        
+
         # # 最大数及其索引
         # last_max, last_max_index = float('-inf'), -1
         # # 窗口的左右界
@@ -39,7 +41,7 @@ class Solution:
 
         #     left += 1
         #     right += 1
-        
+
         # return res
 
         # 双端队列
@@ -48,17 +50,17 @@ class Solution:
         #     return []
         # if k == 1:
         #     return nums
-        
+
         # def clean_deque(i):
         #     # remove indexes of elements not from sliding window
         #     if deq and deq[0] == i - k:
         #         deq.popleft()
-                
-        #     # remove from deq indexes of all elements 
+
+        #     # remove from deq indexes of all elements
         #     # which are smaller than current element nums[i]
         #     while deq and nums[i] > nums[deq[-1]]:
         #         deq.pop()
-        
+
         # # init deque and output
         # deq = deque()
         # max_idx = 0
@@ -69,10 +71,10 @@ class Solution:
         #     if nums[i] > nums[max_idx]:
         #         max_idx = i
         # output = [nums[max_idx]]
-        
+
         # # build output
         # for i in range(k, n):
-        #     clean_deque(i)          
+        #     clean_deque(i)
         #     deq.append(i)
         #     output.append(nums[deq[0]])
         # return output
@@ -82,7 +84,7 @@ class Solution:
             return []
         if k == 1:
             return nums
-        
+
         left = [0] * n
         left[0] = nums[0]
         right = [0] * n
@@ -101,12 +103,12 @@ class Solution:
                 right[j] = nums[j]
             else:
                 right[j] = max(right[j + 1], nums[j])
-        
+
         output = []
         for i in range(n - k + 1):
             output.append(max(left[i + k - 1], right[i]))
-            
+
         return output
 
-# @lc code=end
 
+# @lc code=end

@@ -6,11 +6,15 @@
 
 # @lc code=start
 import heapq
+from typing import List
+
 
 class Solution:
     def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
         # 左端点
-        events = sorted([(L, -H, R) for L, R, H in buildings] + list({(R, 0, 0) for _, R, _ in buildings } ))
+        events = sorted([(L, -H, R) for L, R, H in buildings] +
+                        list({(R, 0, 0)
+                              for _, R, _ in buildings}))
         res = [[0, 0]]
         heap = [[0, float("inf")]]
         for x, H, R in events:
@@ -23,6 +27,5 @@ class Solution:
                 res.append([x, -heap[0][0]])
         return res[1:]
 
-        
-# @lc code=end
 
+# @lc code=end

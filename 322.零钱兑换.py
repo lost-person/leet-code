@@ -6,11 +6,14 @@
 
 # @lc code=start
 from collections import deque
+from typing import List
+
+
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         if not coins:
             return -1
-        
+
         if not amount:
             return 0
 
@@ -37,8 +40,8 @@ class Solution:
         # dp[0] = 0
         # for i in range(1, amount + 1):
         #     dp[i] = min(dp[i - c] if i - c >= 0 else float('inf') for c in coins) + 1
-        
-        # return dp[-1] if dp[-1] < float('inf') else -1
-        
-# @lc code=end
 
+        # return dp[-1] if dp[-1] < float('inf') else -1
+
+
+# @lc code=end

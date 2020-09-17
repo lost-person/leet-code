@@ -27,7 +27,8 @@ for i in range(n - 1, -1, -1):
 
 res = 0
 for i in range(n):
-    if left_max[i] > float('-inf') and right_min[i] < float('inf') and  left_max[i] % right_min[i] == 0:
+    if left_max[i] > float('-inf') and right_min[i] < float(
+            'inf') and left_max[i] % right_min[i] == 0:
         res += 1
 
 print(res)

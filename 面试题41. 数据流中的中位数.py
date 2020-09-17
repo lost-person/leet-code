@@ -1,7 +1,7 @@
 # coding = utf-8
 
-class MedianFinder:
 
+class MedianFinder:
     def __init__(self):
         """
         initialize your data structure here.
@@ -28,7 +28,7 @@ class MaxHeap:
         self.data = [0] * (capacity + 1)
         self.cnt = 0
         self.capacity = capacity
-    
+
     def size(self) -> int:
         return self.cnt
 
@@ -37,7 +37,7 @@ class MaxHeap:
 
     def is_empty(self) -> bool:
         return self.cnt == 0
-    
+
     def insert(self, num):
         """插入
         """
@@ -46,7 +46,7 @@ class MaxHeap:
         self.cnt += 1
         self.data[self.cnt] = num
         self.__swim(self.cnt)
-    
+
     def extract_max(self) -> int:
         if self.is_empty():
             raise Exception('MaxHeap is Empty')
@@ -56,7 +56,7 @@ class MaxHeap:
         # self.data.pop()
         self.__sink(1)
         return num
-    
+
     def __swim(self, index):
         """上浮
         """
@@ -65,7 +65,7 @@ class MaxHeap:
             self.data[index] = self.data[index >> 1]
             index >>= 1
         self.data[index] = tmp
-    
+
     def __sink(self, index):
         """下沉
         """
@@ -88,7 +88,7 @@ class MinHeap:
         self.data = [0] * (capacity + 1)
         self.cnt = 0
         self.capacity = capacity
-    
+
     def size(self) -> int:
         return self.cnt
 
@@ -97,7 +97,7 @@ class MinHeap:
 
     def is_empty(self) -> bool:
         return self.cnt == 0
-    
+
     def insert(self, num):
         """插入
         """
@@ -106,7 +106,7 @@ class MinHeap:
         self.cnt += 1
         self.data[self.cnt] = num
         self.__swim(self.cnt)
-    
+
     def extract_min(self) -> int:
         if self.is_empty():
             raise Exception('MinHeap is Empty')
@@ -116,7 +116,7 @@ class MinHeap:
         # self.data.pop()
         self.__sink(1)
         return num
-    
+
     def __swim(self, index):
         """上浮
         """
@@ -125,7 +125,7 @@ class MinHeap:
             self.data[index] = self.data[index >> 1]
             index >>= 1
         self.data[index] = tmp
-    
+
     def __sink(self, index):
         """下沉
         """
@@ -140,6 +140,7 @@ class MinHeap:
             self.data[index] = self.data[j]
             index = j
         self.data[index] = tmp
+
 
 # if __name__ == "__main__":
 #     median_finder = MedianFinder()
@@ -156,4 +157,3 @@ class MinHeap:
 # obj = MedianFinder()
 # obj.addNum(num)
 # param_2 = obj.findMedian()
-

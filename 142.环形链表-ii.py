@@ -4,12 +4,14 @@
 # [142] 环形链表 II
 #
 
+
 # @lc code=start
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
@@ -39,6 +41,6 @@ class Solution:
             ptr2 = ptr2.next
 
         return ptr1
-        
-# @lc code=end
 
+
+# @lc code=end

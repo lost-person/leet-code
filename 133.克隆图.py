@@ -6,11 +6,13 @@
 
 # @lc code=start
 
+
 # Definition for a Node.
 class Node:
-    def __init__(self, val = 0, neighbors = []):
+    def __init__(self, val=0, neighbors=[]):
         self.val = val
         self.neighbors = neighbors
+
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
@@ -20,14 +22,13 @@ class Solution:
         #     if not node: return
         #     if node in lookup:
         #         return lookup[node]
-            
+
         #     clone = Node(node.val)
         #     lookup[node] = clone
         #     for neighbor in node.neighbors:
         #         clone.neighbors.append(dfs(neighbor))
-            
-        #     return clone
 
+        #     return clone
 
         # return dfs(node)
         from collections import deque
@@ -49,5 +50,6 @@ class Solution:
             return clone
 
         return bfs(node)
-# @lc code=end
 
+
+# @lc code=end

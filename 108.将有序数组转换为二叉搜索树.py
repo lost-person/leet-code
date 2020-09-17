@@ -6,11 +6,15 @@
 
 # @lc code=start
 # Definition for a binary tree node.
+from typing import List
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
@@ -20,7 +24,7 @@ class Solution:
             if left > right: return None
 
             mid = left + ((right - left) >> 1)
-            
+
             val = nums[mid]
             root = TreeNode(val)
 
@@ -28,6 +32,8 @@ class Solution:
             root.right = sortedarray_to_bst(mid + 1, right)
 
             return root
-        return sortedarray_to_bst(0, len(nums) - 1)
-# @lc code=end
 
+        return sortedarray_to_bst(0, len(nums) - 1)
+
+
+# @lc code=end

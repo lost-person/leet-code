@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
         res = []
@@ -14,10 +17,10 @@ class Solution:
             if len(s) == 0 and len(tmp) == 4:
                 res.append('.'.join(tmp))
                 return
-            
+
             if tmp and len(tmp) > 4:
                 return
-            
+
             for i in range(len(s)):
                 # 添加新元素
                 solve(s[i + 1:], tmp + [s[i]])
@@ -29,5 +32,6 @@ class Solution:
 
         solve(s, [])
         return res
-# @lc code=end
 
+
+# @lc code=end

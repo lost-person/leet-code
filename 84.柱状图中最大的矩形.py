@@ -5,12 +5,15 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         # if not heights: return 0
         # n = len(heights)
         # if n == 1: return heights[0]
-        
+
         # area = 0
         # for i in range(n):
         #     minHeight = sys.maxsize
@@ -25,10 +28,10 @@ class Solution:
         #     for i in range(left + 1, right + 1):
         #         if heights[i] < heights[minIndex]:
         #             minIndex = i
-        #     return max(heights[minIndex] * (right - left + 1), calculateArea(heights, left, right - 1), 
+        #     return max(heights[minIndex] * (right - left + 1), calculateArea(heights, left, right - 1),
         #                 calculateArea(heights, left + 1, right))
         # return calculateArea(heights, 0, len(heights) - 1)
-        
+
         stack = []
         heights = [0] + heights + [0]
         res = 0
@@ -40,5 +43,5 @@ class Solution:
             stack.append(i)
         return res
 
-# @lc code=end
 
+# @lc code=end

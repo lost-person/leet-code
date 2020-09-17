@@ -4,13 +4,15 @@
 # [230] 二叉搜索树中第K小的元素
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
@@ -27,5 +29,6 @@ class Solution:
             if not k:
                 return node.val
             node = node.right
-# @lc code=end
 
+
+# @lc code=end

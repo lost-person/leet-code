@@ -4,6 +4,7 @@
 # [114] 二叉树展开为链表
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -12,21 +13,23 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def flatten(self, root: TreeNode) -> None:
         """
         Do not return anything, modify root in-place instead.
         """
-        
+
         while root:
             if root.left:
                 prev = root.left
                 while prev and prev.right:
                     prev = prev.right
-                
+
                 prev.right = root.right
                 root.right = root.left
                 root.left = None
             root = root.right
-# @lc code=end
 
+
+# @lc code=end

@@ -5,14 +5,17 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def minSubArrayLen(self, s: int, nums: List[int]) -> int:
         if not s:
             return 0
-        
+
         n = len(nums)
         res, cur_sum, left = n + 1, 0, 0
-        
+
         for i, num in enumerate(nums):
             cur_sum += num
             while cur_sum >= s:
@@ -20,5 +23,6 @@ class Solution:
                 cur_sum -= nums[left]
                 left += 1
         return res if res < n + 1 else 0
-# @lc code=end
 
+
+# @lc code=end

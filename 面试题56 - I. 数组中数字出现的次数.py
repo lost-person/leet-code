@@ -1,5 +1,8 @@
 # coding = utf-8
 
+from typing import List
+
+
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         ret = 0  # 所有数字异或的结果
@@ -9,7 +12,7 @@ class Solution:
             ret ^= n
         # 找到第一位不是0的
         h = 1
-        while(ret & h == 0):
+        while (ret & h == 0):
             h <<= 1
         for n in nums:
             # 根据该位是否为0将其分为两组

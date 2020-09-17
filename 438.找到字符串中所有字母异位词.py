@@ -5,24 +5,27 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         res = []
         if not s:
             return res
-        
+
         m, n = len(s), len(p)
         if m < n:
             return res
-        
+
         alpha_list = [0] * 26
         for p_c in p:
             alpha_list[ord(p_c) - ord('a')] += 1
-        
+
         left, right = 0, n - 1
         for i in range(left, right + 1):
             alpha_list[ord(s[i]) - ord('a')] -= 1
-        
+
         if not any(alpha_list):
             res.append(left)
 
@@ -34,5 +37,6 @@ class Solution:
             if not any(alpha_list):
                 res.append(left)
         return res
-# @lc code=end
 
+
+# @lc code=end

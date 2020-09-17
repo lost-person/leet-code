@@ -4,19 +4,19 @@ class Solution:
         if n < 0:
             x = 1 / x
             n = abs(n)
-        
+
         def my_pow(x: float, n: int):
             if n == 0:
                 return 1
 
             if n == 1:
                 return x
-            
+
             odd = n & 1
             n >>= 1
             if odd:
-                return x * my_pow(x, n) ** 2
+                return x * my_pow(x, n)**2
             else:
-                return my_pow(x, n) ** 2
-        
+                return my_pow(x, n)**2
+
         return my_pow(x, n)

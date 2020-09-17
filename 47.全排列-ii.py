@@ -5,22 +5,26 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         res = []
         if not len(nums): return res
-        
+
         def backtrack(nums, tmp):
             if not len(nums):
                 res.append(tmp)
-                return 
-            
+                return
+
             for i in range(len(nums)):
                 if i > 0 and nums[i] == nums[i - 1]: continue
                 backtrack(nums[:i] + nums[i + 1:], tmp + [nums[i]])
 
         backtrack(nums, [])
         return res
-# @lc code=end
 
+
+# @lc code=end

@@ -4,13 +4,15 @@
 # [101] 对称二叉树
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x):
+        # self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
@@ -23,9 +25,9 @@ class Solution:
 
         #     return left_node.val == right_node.val and is_symmetric(left_node.left, right_node.right) and \
         #             is_symmetric(left_node.right, right_node.left)
-        
+
         # return is_symmetric(root.left, root.right)
-        
+
         if not root: return True
         res = [root.left, root.right]
 
@@ -41,5 +43,5 @@ class Solution:
             res.append(node2.left)
         return True
 
-# @lc code=end
 
+# @lc code=end

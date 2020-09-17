@@ -4,13 +4,15 @@
 
 row = int(input())
 
+
 def backtrack(num: str, cur_sum: int, target: int, res: int, visited: set):
     if not num:
         if target == cur_sum:
             return True
         return False
-    
-    for next_sum in (cur_sum + int(num[0]), cur_sum - int(num[0]), cur_sum * 10 + int(num[0])):
+
+    for next_sum in (cur_sum + int(num[0]), cur_sum - int(num[0]),
+                     cur_sum * 10 + int(num[0])):
         if (next_sum, len(num[1:])) in visited:
             res += 1
         else:
@@ -19,6 +21,7 @@ def backtrack(num: str, cur_sum: int, target: int, res: int, visited: set):
                 visited.add((next_sum, len(num[1:])))
 
     return res
+
 
 visited = set()
 for i in range(row):

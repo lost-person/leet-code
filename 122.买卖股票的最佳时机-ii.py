@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         if not prices or len(prices) == 1: return 0
@@ -15,10 +18,11 @@ class Solution:
         total_sum = 0
         res = 0
         index = 0
-        
+
         for i, price in enumerate(prices):
             if price > 0: res += price
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end

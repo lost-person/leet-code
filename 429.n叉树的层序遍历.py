@@ -7,10 +7,14 @@
 # @lc code=start
 
 # Definition for a Node.
+from typing import List
+
+
 class Node:
     def __init__(self, val=None, children=None):
         self.val = val
         self.children = children
+
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
@@ -43,6 +47,7 @@ class Solution:
                 traverse_node(child, level + 1)
 
         traverse_node(root, 0)
-        return res            
-# @lc code=end
+        return res
 
+
+# @lc code=end

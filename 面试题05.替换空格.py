@@ -8,11 +8,11 @@ class Solution:
         res = ''
         if not s:
             return res
-        
+
         for c in s:
             if c == ' ':
                 res += '%20'
             else:
                 res += c
-        
+
         return res

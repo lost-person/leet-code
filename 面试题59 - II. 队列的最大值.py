@@ -1,17 +1,17 @@
 # coding = utf-8
 
-class MaxQueue(object):
 
+class MaxQueue(object):
     def __init__(self):
         from collections import deque
         self.que = deque()
-        self.sort_que = deque()   
+        self.sort_que = deque()
 
     def max_value(self):
         """
         :rtype: int
         """
-        return self.sort_que[0] if self.sort_que else -1   
+        return self.sort_que[0] if self.sort_que else -1
 
     def push_back(self, value):
         """
@@ -22,7 +22,7 @@ class MaxQueue(object):
         while self.sort_que and self.sort_que[-1] < value:
             self.sort_que.pop()
         self.sort_que.append(value)
-        
+
     def pop_front(self):
         """
         :rtype: int

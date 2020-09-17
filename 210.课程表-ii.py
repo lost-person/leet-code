@@ -6,21 +6,24 @@
 
 # @lc code=start
 from collections import deque
+from typing import List
+
 
 class Solution:
-    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+    def findOrder(self, numCourses: int,
+                  prerequisites: List[List[int]]) -> List[int]:
         res = []
 
         if not numCourses:
             return res
-        
+
         # in_degree = [0] * numCourses
         # adj_matrix = [[] for _ in range(numCourses)]
 
         # for cur, pre in prerequisites:
         #     in_degree[cur] += 1
         #     adj_matrix[pre].append(cur)
-        
+
         # queue = deque([cur for cur in range(numCourses) if in_degree[cur] == 0])
 
         # while queue:
@@ -40,9 +43,10 @@ class Solution:
             adj_matrix[pre].append(cur)
 
         is_cycle = False
+
         def dfs(pre: int):
             nonlocal is_cycle
-            
+
             visited[pre] = 1
             for cur in adj_matrix[pre]:
                 if not visited[cur]:
@@ -56,7 +60,7 @@ class Solution:
             visited[pre] = 2
             res.append(pre)
             return
-        
+
         for pre in range(numCourses):
             if is_cycle:
                 break
@@ -65,5 +69,6 @@ class Solution:
                 dfs(pre)
 
         return res if len(res) == numCourses else []
-# @lc code=end
 
+
+# @lc code=end

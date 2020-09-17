@@ -8,7 +8,7 @@ class Solution:
         """
         if not matrix or not matrix[0]:
             return False
-        
+
         # m, n = len(matrix), len(matrix[0])
 
         # row, col = m - 1, 0

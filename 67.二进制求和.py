@@ -4,6 +4,7 @@
 # [67] 二进制求和
 #
 
+
 # @lc code=start
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
@@ -20,7 +21,7 @@ class Solution:
             s = tmp_sum + s
             i -= 1
             j -= 1
-        
+
         if i < 0:
             while j >= 0:
                 tmp_sum = int(b[j]) + carry
@@ -35,9 +36,10 @@ class Solution:
                 tmp_sum = str(tmp_sum % 2)
                 s = tmp_sum + s
                 i -= 1
-        
+
         if carry:
             s = '1' + s
         return s
-# @lc code=end
 
+
+# @lc code=end

@@ -6,6 +6,8 @@
 
 # @lc code=start
 from collections import defaultdict, deque
+from typing import List
+
 
 class Node:
     def __init__(self):
@@ -13,26 +15,30 @@ class Node:
         self.value = 0.0
         self.parent = None
 
+
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    def calcEquation(self, equations: List[List[str]], values: List[float],
+                     queries: List[List[str]]) -> List[float]:
         # floyd
-        graph = defaultdict(lambda: defaultdict(lambda:-1.0))
+        graph = defaultdict(lambda: defaultdict(lambda: -1.0))
         var_set = set()
-        for i in equations: var_set.update(i)
-        for i in var_set: graph[i][i] = 1.0
+        for i in equations:
+            var_set.update(i)
+        for i in var_set:
+            graph[i][i] = 1.0
         for i, j in zip(equations, values):
             x, y = i
             graph[x][y] = j
             graph[y][x] = 1.0 / j
-        
+
         # for k in var_set:
         #     for i in var_set:
         #         if graph[i][k] != -1.0:
         #             for j in var_set:
         #                 if graph[k][j] !=-1.0 and graph[i][j] == -1.0 : graph[i][j] = graph[i][k] * graph[k][j]
-            
+
         # return [graph[x][y] for x, y in queries]
-        
+
         res = []
         if not equations or not equations[0] or not values:
             return res
@@ -78,5 +84,6 @@ class Solution:
         #                 queue.appendleft([nxt, val * graph[tmp][nxt]])
         #     return -1
         # return [bfs(*q) if q[0] in var_set and q[1] in var_set else -1.0 for q in queries]
-# @lc code=end
 
+
+# @lc code=end

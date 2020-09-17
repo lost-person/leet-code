@@ -5,10 +5,13 @@
 #
 
 # @lc code=start
+from collections import Counter, defaultdict
+
+
 class Solution:
     def balancedString(self, s: str) -> int:
-        counter = collections.Counter(s)
-        times = len(s)//4
+        counter = Counter(s)
+        times = len(s) // 4
 
         # 将counter修剪成键值对中值大于times的字典
         for k in list(counter.keys()):
@@ -23,7 +26,7 @@ class Solution:
             return 0
 
         # 在s中找出连续的字串，字串必须包含counter所有的元素，顺序没有要求
-        window = collections.defaultdict(int)
+        window = defaultdict(int)
         left, right, n = 0, 0, len(s)
         match, minlength = 0, float('inf')
 
@@ -47,6 +50,7 @@ class Solution:
                     if window[c2] < counter[c2]:
                         match -= 1
                 left += 1
-        return  minlength
-# @lc code=end
+        return minlength
 
+
+# @lc code=end

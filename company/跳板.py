@@ -7,7 +7,7 @@ N, K, H = map(int, input().split())
 h_list = [int(input()) for _ in range(N)]
 
 queue = deque()
-queue.appendleft((K, 0, 0)) # jump_cnt, cur_hight, jump
+queue.appendleft((K, 0, 0))  # jump_cnt, cur_hight, jump
 h_max = 0
 
 while queue:

@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
         """
@@ -46,5 +49,6 @@ class Solution:
         # reverse(0, n - 1)
         # reverse(0, k - 1)
         # reverse(k, n - 1)
-# @lc code=endn
 
+
+# @lc code=endn

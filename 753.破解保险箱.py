@@ -4,11 +4,13 @@
 # [753] 破解保险箱
 #
 
+
 # @lc code=start
 class Solution:
     def crackSafe(self, n: int, k: int) -> str:
         seen = set()
         ans = []
+
         def dfs(node):
             for x in map(str, range(k)):
                 nei = node + x
@@ -17,8 +19,8 @@ class Solution:
                     dfs(nei[1:])
                     ans.append(x)
 
-        dfs("0" * (n-1))
-        return "".join(ans) + "0" * (n-1)
+        dfs("0" * (n - 1))
+        return "".join(ans) + "0" * (n - 1)
+
 
 # @lc code=end
-

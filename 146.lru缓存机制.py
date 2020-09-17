@@ -21,7 +21,7 @@
 #         """
 #         if key not in self:
 #             return - 1
-        
+
 #         self.move_to_end(key)
 #         return self[key]
 
@@ -37,13 +37,15 @@
 #         if len(self) > self.capacity:
 #             self.popitem(last = False)
 
-class DLinkedNode(): 
+
+class DLinkedNode():
     def __init__(self):
         self.key = 0
         self.value = 0
         self.prev = None
         self.next = None
-            
+
+
 class LRUCache():
     def _add_node(self, node):
         """
@@ -91,7 +93,6 @@ class LRUCache():
 
         self.head.next = self.tail
         self.tail.prev = self.head
-        
 
     def get(self, key):
         """
@@ -115,7 +116,7 @@ class LRUCache():
         """
         node = self.cache.get(key)
 
-        if not node: 
+        if not node:
             newNode = DLinkedNode()
             newNode.key = key
             newNode.value = value
@@ -135,9 +136,9 @@ class LRUCache():
             node.value = value
             self._move_to_head(node)
 
+
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
 # @lc code=end
-

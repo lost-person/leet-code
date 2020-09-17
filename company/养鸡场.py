@@ -5,6 +5,7 @@
 
 import heapq as hp
 
+
 def solve():
     N, M, K = map(int, input().split())
     chicken_list = list(map(int, input().split()))
@@ -14,10 +15,11 @@ def solve():
         tmp = -hp.heappop(chicken_list) - (i + 1) * K
         tmp = tmp // 2
         hp.heappush(chicken_list, -tmp)
-    
+
     res = 0
     for i in range(N):
         res += -hp.heappop(chicken_list)
     return res + N * M * K
+
 
 print(solve())

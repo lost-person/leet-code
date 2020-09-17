@@ -6,6 +6,8 @@
 
 # @lc code=start
 from collections import deque
+from typing import List
+
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
@@ -21,15 +23,18 @@ class Solution:
         def dfs(start):  # 返回s[start:]能由字典构成的所有句子
             if start not in memo:
                 res = []
-                for i in range(_min, min(_max, _len-start)+1):
-                    if s[start: start+i] in wordDict:
-                        res.extend(list(map(lambda x: s[start: start+i]+' '+x, dfs(start+i))))
+                for i in range(_min, min(_max, _len - start) + 1):
+                    if s[start:start + i] in wordDict:
+                        res.extend(
+                            list(
+                                map(lambda x: s[start:start + i] + ' ' + x,
+                                    dfs(start + i))))
                 memo[start] = res
             return memo[start]
 
         memo = {_len: ['']}
         return list(map(lambda x: x[:-1], dfs(0)))
-        
+
         # dp
         # res = []
         # if not wordDict: return []
@@ -44,15 +49,15 @@ class Solution:
         #         if dp[j] and s[j: i] in word_set:
         #             dp[i] = True
         #             break
-        
+
         # queue = collections.deque()
-        
+
         # def dfs(end):
         #     if s[: end] in wordDict:
         #         queue.appendleft(s[: end])
         #         res.append(' '.join(queue))
         #         queue.popleft()
-            
+
         #     for i in range(1, end):
         #         if dp[i]:
         #             suffix = s[i: end]
@@ -65,5 +70,5 @@ class Solution:
         #     dfs(n)
         # return res
 
-# @lc code=end
 
+# @lc code=end

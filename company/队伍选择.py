@@ -6,17 +6,19 @@
 
 n = int(input())
 
+
 def quick_mod(n):
     if n == 0:
         return 1
     if n == 1:
         return 2
-    
+
     res = quick_mod(n // 2)
     if n & 1 == 0:
-        return (res * res) % (10 ** 9 + 7)
+        return (res * res) % (10**9 + 7)
     else:
-        return 2 * ((res * res) % (10 ** 9 + 7)) % 10 ** 9 + 7
+        return 2 * ((res * res) % (10**9 + 7)) % 10**9 + 7
+
 
 total_num = quick_mod(n * quick_mod(n - 1))
 print(total_num)

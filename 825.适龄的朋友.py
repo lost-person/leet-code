@@ -6,6 +6,8 @@
 
 # @lc code=start
 from collections import Counter
+from typing import List
+
 
 class Solution:
     def numFriendRequests(self, ages: List[int]) -> int:
@@ -25,5 +27,6 @@ class Solution:
                 if age_a == age_b: res -= cnt_a
 
         return res
-# @lc code=end
 
+
+# @lc code=end

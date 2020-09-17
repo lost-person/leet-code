@@ -4,6 +4,7 @@
 # [91] 解码方法
 #
 
+
 # @lc code=start
 class Solution:
     def numDecodings(self, s: str) -> int:
@@ -23,11 +24,12 @@ class Solution:
                 res[1] = res[0]
             else:
                 res[1] = 0
-        elif int(s[0]) == 0 or int(s[0]) > 2 or (int(s[0]) == 2 and int(s[1]) > 6):
+        elif int(s[0]) == 0 or int(s[0]) > 2 or (int(s[0]) == 2
+                                                 and int(s[1]) > 6):
             res[1] = res[0]
         else:
             res[1] = res[0] + 1
-                
+
         for i in range(2, m):
             # 必须和前一字符共同解码
             if int(s[i]) == 0:
@@ -36,10 +38,13 @@ class Solution:
                 else:
                     res[i] = 0
             # 单独解码
-            elif int(s[i - 1]) == 0 or int(s[i - 1]) > 2 or (int(s[i - 1]) == 2 and int(s[i]) > 6):
+            elif int(
+                    s[i - 1]) == 0 or int(s[i - 1]) > 2 or (int(s[i - 1]) == 2
+                                                            and int(s[i]) > 6):
                 res[i] = res[i - 1]
             else:
                 res[i] = res[i - 1] + res[i - 2]
         return res[m - 1]
-# @lc code=end
 
+
+# @lc code=end

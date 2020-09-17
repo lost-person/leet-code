@@ -6,18 +6,22 @@
 
 # @lc code=start
 # Definition for a binary tree node.
+from typing import List
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
 
+
 class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         res = []
         if not root:
             return res
-        
+
         node_list = []
         node = root
         while node_list or node:
@@ -29,5 +33,6 @@ class Solution:
                 res.append(node.val)
                 node = node.right
         return res
-# @lc code=end
 
+
+# @lc code=end

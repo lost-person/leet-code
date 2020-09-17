@@ -4,6 +4,7 @@
 # [62] 不同路径
 #
 
+
 # @lc code=start
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
@@ -18,5 +19,6 @@ class Solution:
                     res[i][j] = res[i - 1][j] + res[i][j - 1]
 
         return res[m - 1][n - 1]
-# @lc code=end
 
+
+# @lc code=end

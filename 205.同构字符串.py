@@ -4,12 +4,13 @@
 # [205] 同构字符串
 #
 
+
 # @lc code=start
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        
+
         char_dict = {}
         for i in range(len(s)):
             if s[i] not in char_dict:
@@ -21,5 +22,6 @@ class Solution:
                 if char_dict[s[i]] != t[i]:
                     return False
         return True
-# @lc code=end
 
+
+# @lc code=end

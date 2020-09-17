@@ -5,20 +5,23 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         res = False
         n = len(nums)
         # 无需跳跃
         if n == 0: return res
-        
+
         index = 0
         while index < n:
             # 抵达终点
             if nums[index] + index >= n - 1:
                 res = True
                 break
-            
+
             if nums[index] == 0:
                 break
 
@@ -32,5 +35,6 @@ class Solution:
 
             index = next_index
         return res
-# @lc code=end
 
+
+# @lc code=end

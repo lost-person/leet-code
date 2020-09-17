@@ -4,12 +4,14 @@
 # [82] 删除排序链表中的重复元素 II
 #
 
+
 # @lc code=start
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
@@ -37,6 +39,6 @@ class Solution:
         if slow.next:
             prev.next = None
         return dummy.next
-        
-# @lc code=end
 
+
+# @lc code=end

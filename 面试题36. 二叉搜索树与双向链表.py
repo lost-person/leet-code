@@ -1,3 +1,5 @@
+# coding = utf-8
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
@@ -6,7 +8,7 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    def treeToDoublyList(self, root: 'Node') -> 'Node':
+    def treeToDoublyList(self, root: 'TreeNode') -> 'TreeNode':
         if not root:
             return root
 

@@ -4,6 +4,7 @@
 # [147] 对链表进行插入排序
 #
 
+
 # @lc code=start
 # Definition for singly-linked list.
 class ListNode:
@@ -11,13 +12,14 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 class Solution:
     def insertionSortList(self, head: ListNode) -> ListNode:
         dummy = ListNode(float('-inf'))
 
-        prev = dummy # 用于寻找插入位置
-        tail = dummy # 有序链表的尾部
-        cur = head # 当前位置
+        prev = dummy  # 用于寻找插入位置
+        tail = dummy  # 有序链表的尾部
+        cur = head  # 当前位置
 
         while cur:
             if tail.val < cur.val:
@@ -35,7 +37,8 @@ class Solution:
                 # 恢复
                 prev = dummy
                 cur = tmp
-        
-        return dummy.next
-# @lc code=end
 
+        return dummy.next
+
+
+# @lc code=end

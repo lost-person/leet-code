@@ -6,6 +6,8 @@
 
 # @lc code=start
 from collections import defaultdict
+from typing import List
+
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
@@ -23,5 +25,6 @@ class Solution:
                 count[ord(c) - ord('a')] += 1
             ans[tuple(count)].append(s)
         return ans.values()
-# @lc code=end
 
+
+# @lc code=end

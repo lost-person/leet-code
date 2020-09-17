@@ -7,13 +7,14 @@
 # @lc code=start
 from collections import defaultdict
 
+
 class TrieNode:
     def __init__(self):
         self.children = defaultdict(TrieNode)
         self.is_word = False
 
-class WordDictionary:
 
+class WordDictionary:
     def __init__(self):
         """
         Initialize your data structure here.
@@ -38,7 +39,7 @@ class WordDictionary:
         def _helper(node, word, index):
             if index == len(word):
                 return node.is_word
-            
+
             cur_node = node
             c = word[index]
             if c == '.':
@@ -51,7 +52,7 @@ class WordDictionary:
                 if not cur_node:
                     return False
                 return _helper(cur_node, word, index + 1)
-        
+
         return _helper(cur_node, word, 0)
 
 
@@ -60,4 +61,3 @@ class WordDictionary:
 # obj.addWord(word)
 # param_2 = obj.search(word)
 # @lc code=end
-

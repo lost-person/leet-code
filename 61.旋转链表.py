@@ -4,12 +4,14 @@
 # [61] 旋转链表
 #
 
+
 # @lc code=start
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 
 class Solution:
     def rotateRight(self, head: ListNode, k: int) -> ListNode:
@@ -27,9 +29,10 @@ class Solution:
         new_tail = head
         for i in range(n - k % n - 1):
             new_tail = new_tail.next
-        
+
         new_head = new_tail.next
         new_tail.next = None
         return new_head
-# @lc code=end
 
+
+# @lc code=end

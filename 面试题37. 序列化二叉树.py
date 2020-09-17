@@ -1,13 +1,15 @@
 # Definition for a binary tree node.
+from collections import deque
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
 
-from collections import deque
-class Codec:
 
+class Codec:
     def serialize(self, root):
         """Encodes a tree to a single string.
         
@@ -36,7 +38,7 @@ class Codec:
         """
         if not data or data[0] == 'n':
             return None
-        
+
         tree_node_list = data.split(' ')
         root = TreeNode(int(tree_node_list[0]))
         node_list = deque()
@@ -45,8 +47,12 @@ class Codec:
         while node_list:
             node = node_list.popleft()
             if node:
-                node.left = TreeNode(int(tree_node_list[i])) if tree_node_list[i] != 'n' else None
-                node.right = TreeNode(int(tree_node_list[i + 1])) if tree_node_list[i + 1] != 'n' else None
+                node.left = TreeNode(int(
+                    tree_node_list[i])) if tree_node_list[i] != 'n' else None
+                node.right = TreeNode(int(
+                    tree_node_list[i +
+                                   1])) if tree_node_list[i +
+                                                          1] != 'n' else None
                 i += 2
                 node_list.append(node.left)
                 node_list.append(node.right)

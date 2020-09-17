@@ -4,6 +4,7 @@
 # [236] 二叉树的最近公共祖先
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -11,6 +12,7 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     # Three static flags to keep track of post-order traversal.
@@ -22,7 +24,9 @@ class Solution:
     # Both left and right traversal done for a node.
     # Indicates the node can be popped off the stack.
     BOTH_DONE = 0
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode',
+                             q: 'TreeNode') -> 'TreeNode':
         # if not root or root == p or root == q: return root
 
         # left = self.lowestCommonAncestor(root.left, p, q)
@@ -33,7 +37,7 @@ class Solution:
         # if not right:
         #     return left
         # return root
-        
+
         # # 父指针迭代
         # stack = [root]
         # parent = {root: None}
@@ -44,20 +48,20 @@ class Solution:
         #     if node.left:
         #         stack.append(node.left)
         #         parent[node.left] = node
-            
+
         #     if node.right:
         #         stack.append(node.right)
         #         parent[node.right] = node
-            
+
         # ancestors = set()
 
         # while p:
         #     ancestors.add(p)
         #     p = parent[p]
-        
+
         # while q not in ancestors:
         #     q = parent[q]
-        
+
         # return q
 
         # Initialize the stack with the root node.
@@ -121,5 +125,5 @@ class Solution:
 
         return None
 
-# @lc code=end
 
+# @lc code=end

@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1
@@ -17,5 +20,6 @@ class Solution:
             else:
                 right = mid - 1
         return left
-# @lc code=end
 
+
+# @lc code=end

@@ -6,11 +6,15 @@
 
 # @lc code=start
 
+from typing import List
 # Definition for a Node.
+
+
 class Node:
     def __init__(self, val=None, children=None):
         self.val = val
         self.children = children
+
 
 class Solution:
     def postorder(self, root: 'Node') -> List[int]:
@@ -24,9 +28,9 @@ class Solution:
         #     if node:
         #         res.append(node.val)
         #     node_list.extend(node.children)
-        
+
         # return res[::-1]
-        
+
         # 递归
         res = []
         if not root: return []
@@ -37,8 +41,9 @@ class Solution:
             for child in node.children:
                 postTraversal(child)
             res.append(node.val)
+
         postTraversal(root)
         return res
 
-# @lc code=end
 
+# @lc code=end

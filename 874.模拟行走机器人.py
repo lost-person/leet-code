@@ -5,14 +5,17 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def robotSim(self, commands: List[int], obstacles: List[List[int]]) -> int:
         res = 0
         if not commands:
             return res
-        
+
         # 确定方向
-        coordinate= [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        coordinate = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         direction = 0
 
         obstacles_set = set(map(tuple, obstacles))
@@ -27,13 +30,14 @@ class Solution:
                     if (new_x, new_y) in obstacles_set:
                         break
                     x, y = new_x, new_y
-                res = max(res, x ** 2 + y ** 2)
+                res = max(res, x**2 + y**2)
             # 更新方向
             elif command == -1:
                 direction = (direction + 1) % 4
             elif command == -2:
                 direction = (direction - 1) % 4
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end

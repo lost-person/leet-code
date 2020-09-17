@@ -4,6 +4,7 @@
 # [69] x 的平方根
 #
 
+
 # @lc code=start
 class Solution:
     def mySqrt(self, x: int) -> int:
@@ -35,5 +36,6 @@ class Solution:
                 left = mid
         # 因为一定存在，因此无需后处理
         return left
-# @lc code=end
 
+
+# @lc code=end

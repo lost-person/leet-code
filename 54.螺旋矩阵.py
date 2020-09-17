@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         res_list = []
@@ -24,7 +27,8 @@ class Solution:
 
             next_row = row + dr[di]
             next_col = col + dc[di]
-            if 0 <= next_row < m and 0 <= next_col < n and not seen[next_row][next_col]:
+            if 0 <= next_row < m and 0 <= next_col < n and not seen[next_row][
+                    next_col]:
                 row = next_row
                 col = next_col
             else:
@@ -33,5 +37,6 @@ class Solution:
                 col += dc[di]
 
         return res_list
-# @lc code=end
 
+
+# @lc code=end

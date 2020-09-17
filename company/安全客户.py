@@ -14,20 +14,22 @@ for row in range(n):
     if not any(matrix[row]):
         safe_user_set.add(row)
 
+
 def dfs(row, visited):
     if row in visited:
         return False
-    
+
     if row in safe_user_set:
         return True
-    
+
     visited.add(row)
     for col in range(n):
         if matrix[row][col] == 1 and not dfs(col, visited):
             return False
-    
+
     safe_user_set.add(row)
     return True
+
 
 for row in range(n):
     if row not in safe_user_set:

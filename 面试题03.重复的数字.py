@@ -20,17 +20,17 @@ class Solution:
         n = len(nums)
         left = 0
         right = n - 1
-        
+
         while left < right:
             mid = left + ((right - left) >> 1)
             cnt = 0
             for num in nums:
                 if num <= mid:
                     cnt += 1
-            
+
             if cnt > mid:
                 right = mid
             else:
                 left = mid + 1
-        
+
         return nums[left]

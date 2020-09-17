@@ -4,6 +4,7 @@
 # [99] 恢复二叉搜索树
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -12,29 +13,30 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def recoverTree(self, root: TreeNode) -> None:
         """
         Do not return anything, modify root in-place instead.
         """
-        # predecessor is a Morris predecessor. 
+        # predecessor is a Morris predecessor.
         # In the 'loop' cases it could be equal to the node itself predecessor == root.
-        # pred is a 'true' predecessor, 
+        # pred is a 'true' predecessor,
         # the previous node in the inorder traversal.
         x = y = predecessor = pred = None
-        
+
         while root:
             # If there is a left child
             # then compute the predecessor.
             # If there is no link predecessor.right = root --> set it.
             # If there is a link predecessor.right = root --> break it.
-            if root.left:       
-                # Predecessor node is one step left 
+            if root.left:
+                # Predecessor node is one step left
                 # and then right till you can.
                 predecessor = root.left
                 while predecessor.right and predecessor.right != root:
                     predecessor = predecessor.right
- 
+
                 # set link predecessor.right = root
                 # and go to explore left subtree
                 if predecessor.right is None:
@@ -47,9 +49,9 @@ class Solution:
                     if pred and root.val < pred.val:
                         y = root
                         if x is None:
-                            x = pred 
+                            x = pred
                     pred = root
-                    
+
                     predecessor.right = None
                     root = root.right
             # If there is no left child
@@ -59,11 +61,11 @@ class Solution:
                 if pred and root.val < pred.val:
                     y = root
                     if x is None:
-                        x = pred 
+                        x = pred
                 pred = root
-                
+
                 root = root.right
-        
+
         x.val, y.val = y.val, x.val
 
         # morris 遍历(中序遍历)
@@ -75,7 +77,7 @@ class Solution:
                     prev = cur.left
                     while prev.right and prev.right != cur:
                         prev = prev.right
-                    
+
                     if not prev.right:
                         prev.right = cur
                         cur = cur.left
@@ -98,7 +100,7 @@ class Solution:
                     prev = cur.left
                     while prev.right and prev.right != cur:
                         prev = prev.right
-                    
+
                     if not prev.right:
                         print(cur.val)
                         prev.right = cur
@@ -111,7 +113,7 @@ class Solution:
                 else:
                     print(cur.val)
                     cur = cur.right
-        
+
         # 后序遍历
         def morris(root):
             dummy = TreeNode(-1)
@@ -131,7 +133,7 @@ class Solution:
                         cur = cur.right
                 else:
                     cur = cur.right
-        
+
         def print_reverse(left, prev):
             reverse(left, prev)
 
@@ -142,7 +144,7 @@ class Solution:
                     break
                 p = p.right
             reverse(prev, left)
-        
+
         def reverse(left, prev):
             if left == prev:
                 return
@@ -155,5 +157,5 @@ class Solution:
                 if x == prev:
                     break
 
-# @lc code=end
 
+# @lc code=end

@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         if not tokens: return 0
@@ -25,7 +28,8 @@ class Solution:
                 else:
                     res = int(b / a)
                 stack.append(res)
-        
-        return stack[0]
-# @lc code=end
 
+        return stack[0]
+
+
+# @lc code=end

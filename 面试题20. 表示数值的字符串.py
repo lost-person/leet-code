@@ -1,12 +1,13 @@
 # coding = utf-8
 
+
 class Solution:
     def isNumber(self, s: str) -> bool:
         if not s:
             return False
-        
+
         n = len(s)
-        
+
         def judge_p(index):
             """判断是否为指数
             """
@@ -56,4 +57,3 @@ class Solution:
                 return judge_s(index) and judge_p(index + 1)
         else:
             return judge_s(index) and judge_p(index + 1)
-

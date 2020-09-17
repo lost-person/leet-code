@@ -6,16 +6,21 @@
 
 # @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+from typing import List
+from collections import deque
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution:
     def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         if not root: return []
-        
+
         res = []
         node_list = [root]
         while node_list:
@@ -33,7 +38,7 @@ class Solution:
                     if node_list[i].right:
                         node_list.append(node_list[i].right)
                     if node_list[i].left:
-                        node_list.append(node_list[i].left)  
+                        node_list.append(node_list[i].left)
             node_list = node_list[m:]
         return res
 
@@ -58,4 +63,3 @@ class Solution:
 
 
 # @lc code=end
-

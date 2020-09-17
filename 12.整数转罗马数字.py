@@ -4,11 +4,15 @@
 # [12] 整数转罗马数字
 #
 
+
 # @lc code=start
 class Solution:
     def intToRoman(self, num: int) -> str:
         nums = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-        romans = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        romans = [
+            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV",
+            "I"
+        ]
 
         index = 0
         res = ''
@@ -20,5 +24,5 @@ class Solution:
             index += 1
         return res
 
-# @lc code=end
 
+# @lc code=end

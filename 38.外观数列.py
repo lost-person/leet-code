@@ -8,15 +8,17 @@
 @LastEditTime : 2020-01-31 17:13:58
 @FilePath: \leetcode\38.外观数列.py
 '''
+
 #
 # [38] 外观数列
 #
+
 
 # @lc code=start
 class Solution:
     def countAndSay(self, n: int) -> str:
         s = '1'
-    
+
         i = 1
         prev_s = ''
         while i < n:
@@ -31,8 +33,8 @@ class Solution:
             s = prev_s
             prev_s = ''
             i += 1
-        
-        return s
-        
-# @lc code=end
 
+        return s
+
+
+# @lc code=end

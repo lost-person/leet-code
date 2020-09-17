@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if not nums: return 0
@@ -19,7 +22,7 @@ class Solution:
         #     if cnt > 2:
         #         nums.pop(i - n)
         #         n -= 1
-        
+
         # return len(nums)
 
         i = 0
@@ -28,5 +31,6 @@ class Solution:
                 nums[i] = num
                 i += 1
         return i
-# @lc code=end
 
+
+# @lc code=end

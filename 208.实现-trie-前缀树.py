@@ -4,9 +4,9 @@
 # [208] 实现 Trie (前缀树)
 #
 
+
 # @lc code=start
 class Trie:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -25,7 +25,6 @@ class Trie:
         # 单词结束标志
         tree["#"] = '#'
 
-
     def search(self, word: str) -> bool:
         """
         Returns if the word is in the trie.
@@ -39,7 +38,6 @@ class Trie:
             return True
         return False
 
-
     def startsWith(self, prefix: str) -> bool:
         """
         Returns if there is any word in the trie that starts with the given prefix.
@@ -50,7 +48,6 @@ class Trie:
                 return False
             tree = tree[c]
         return True
-
 
 
 # Your Trie object will be instantiated and called as such:
@@ -71,6 +68,5 @@ if __name__ == "__main__":
     trie.search("apple")
     trie.search("app")
     trie.startsWith("app")
-    trie.insert("app")  
+    trie.insert("app")
     trie.search("app")
-

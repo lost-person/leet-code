@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         # 排序 直接返回
@@ -13,11 +16,11 @@ class Solution:
         # 快排
         if not nums or not k:
             return -1
-        
+
         def partition(left, right, pivot_index):
             pivot = nums[pivot_index]
             nums[right], nums[pivot_index] = nums[pivot_index], nums[right]
-            
+
             i = left
             for j in range(left, right):
                 if nums[j] > pivot:
@@ -25,11 +28,11 @@ class Solution:
                     i += 1
             nums[i], nums[right] = nums[right], nums[i]
             return i
-        
+
         def select(left, right, k):
             if left == right:
                 return nums[left]
-            
+
             pivot_index = left
             pivot_index = partition(left, right, pivot_index)
             if pivot_index == k - 1:
@@ -38,9 +41,8 @@ class Solution:
                 return select(pivot_index + 1, right, k)
             else:
                 return select(left, pivot_index - 1, k)
-        
+
         return select(0, len(nums) - 1, k)
 
 
 # @lc code=end
-

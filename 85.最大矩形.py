@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def maximalRectangle(self, matrix: List[List[str]]) -> int:
         if not matrix or not matrix[0]: return 0
@@ -12,8 +15,8 @@ class Solution:
         m = len(matrix)
         n = len(matrix[0])
 
-        left = [0] * n # initialize left as the leftmost boundary possible
-        right = [n] * n # initialize right as the rightmost boundary possible
+        left = [0] * n  # initialize left as the leftmost boundary possible
+        right = [n] * n  # initialize right as the rightmost boundary possible
         height = [0] * n
 
         maxarea = 0
@@ -92,5 +95,5 @@ class Solution:
         #     maxarea = max(maxarea, self.leetcode84(dp))
         # return maxarea
 
-# @lc code=end
 
+# @lc code=end

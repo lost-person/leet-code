@@ -4,6 +4,7 @@
 # [70] 爬楼梯
 #
 
+
 # @lc code=start
 class Solution:
     def climbStairs(self, n: int) -> int:
@@ -15,5 +16,5 @@ class Solution:
             res[i] = res[i - 1] + res[i - 2]
         return res[n - 1]
 
-# @lc code=end
 
+# @lc code=end

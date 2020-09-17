@@ -4,16 +4,16 @@
 # [641] 设计循环双端队列
 #
 
+
 # @lc code=start
 class MyCircularDeque:
-
     def __init__(self, k: int):
         """
         Initialize your data structure here. Set the size of the deque to be k.
         """
         self.head = 0
         self.tail = 0
-        self.capacity= k + 1
+        self.capacity = k + 1
         self.data = [0 for _ in range(self.capacity)]
 
     def insertFront(self, value: int) -> bool:
@@ -24,7 +24,6 @@ class MyCircularDeque:
         self.head = (self.head - 1 + self.capacity) % self.capacity
         self.data[self.head] = value
         return True
-        
 
     def insertLast(self, value: int) -> bool:
         """
@@ -42,7 +41,6 @@ class MyCircularDeque:
         if self.isEmpty(): return False
         self.head = (self.head + 1) % self.capacity
         return True
-        
 
     def deleteLast(self) -> bool:
         """
@@ -51,7 +49,6 @@ class MyCircularDeque:
         if self.isEmpty(): return False
         self.tail = (self.tail - 1 + self.capacity) % self.capacity
         return True
-        
 
     def getFront(self) -> int:
         """
@@ -60,27 +57,25 @@ class MyCircularDeque:
         if self.isEmpty(): return -1
         return self.data[self.head]
 
-
     def getRear(self) -> int:
         """
         Get the last item from the deque.
         """
         if self.isEmpty(): return -1
         return self.data[(self.tail - 1 + self.capacity) % self.capacity]
-        
 
     def isEmpty(self) -> bool:
         """
         Checks whether the circular deque is empty or not.
         """
         return self.head == self.tail
-        
 
     def isFull(self) -> bool:
         """
         Checks whether the circular deque is full or not.
         """
         return (self.tail + 1) % self.capacity == self.head
+
 
 # Your MyCircularDeque object will be instantiated and called as such:
 # obj = MyCircularDeque(k)
@@ -93,4 +88,3 @@ class MyCircularDeque:
 # param_7 = obj.isEmpty()
 # param_8 = obj.isFull()
 # @lc code=end
-

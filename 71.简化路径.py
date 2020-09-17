@@ -4,6 +4,7 @@
 # [71] 简化路径
 #
 
+
 # @lc code=start
 class Solution:
     def simplifyPath(self, path: str) -> str:
@@ -14,5 +15,6 @@ class Solution:
             elif word == '..' and stack:
                 stack.pop()
         return '/' + '/'.join(stack)
-# @lc code=end
 
+
+# @lc code=end

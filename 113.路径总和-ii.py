@@ -6,11 +6,15 @@
 
 # @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+from typing import List
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution:
     def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
@@ -21,15 +25,15 @@ class Solution:
             if not node.left and not node.right and node.val == sum:
                 res.append(tmp + [node.val])
                 return
-            
+
             tmp = tmp + [node.val]
             if node.left:
                 path_sum(node.left, sum - node.val, tmp)
             if node.right:
                 path_sum(node.right, sum - node.val, tmp)
-        
+
         path_sum(root, sum, [])
         return res
 
-# @lc code=end
 
+# @lc code=end

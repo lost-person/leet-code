@@ -2,6 +2,7 @@
 
 import sys
 
+
 def solve():
     T = int(input())
     while T > 0:
@@ -21,7 +22,8 @@ def solve():
             if ss in my_set:
                 res = "YES"
             my_set.add(ss)
-        
+
         print(res)
+
 
 solve()

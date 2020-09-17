@@ -5,12 +5,15 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
         n = len(nums)
         if n == 1:
             return 0
-        
+
         left, right = 0, n - 1
         while left < right:
             mid = left + (right - left) // 2
@@ -19,5 +22,6 @@ class Solution:
             else:
                 left = mid + 1
         return left
-# @lc code=end
 
+
+# @lc code=end

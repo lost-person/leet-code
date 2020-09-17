@@ -4,12 +4,13 @@
 # [97] 交错字符串
 #
 
+
 # @lc code=start
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
         ## 超时
         # if len(s3) != (len(s1) + len(s2)): return False
-        
+
         # def is_interleave(s1_i, s2_j, s3_k):
         #     if not s3_k: return True
 
@@ -20,21 +21,21 @@ class Solution:
         #         res_2 = is_interleave(s1_i, s2_j[1:], s3_k[1:])
         #     return res_1 or res_2
         # return is_interleave(s1, s2, s3)
-        
+
         ## 二维 dp
         # m, n, l = len(s1), len(s2), len(s3)
         # if l != (m + n): return False
-        
+
         # res = [[False] * (n + 1) for _ in range(m + 1)]
         # res[0][0] = True
 
         # i, j = 0, 0
         # for i in range(1, m + 1):
         #     res[i][0] = res[i - 1][0] and (s1[i - 1] == s3[i - 1])
-        
+
         # for j in range(1, n + 1):
         #     res[0][j] = res[0][j - 1] and (s2[j - 1] == s3[j - 1])
-        
+
         # for i in range(1, m + 1):
         #     for j in range(1, n + 1):
         #         res[i][j] = (res[i - 1][j] and s1[i - 1] == s3[i + j - 1]) or (
@@ -62,6 +63,6 @@ class Solution:
                     res[j] = (res[j] and s1[i - 1] == s3[i + j - 1]) or (
                         res[j - 1] and s2[j - 1] == s3[i + j - 1])
         return res[n]
-        
-# @lc code=end
 
+
+# @lc code=end

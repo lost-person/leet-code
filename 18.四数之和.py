@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
@@ -18,8 +21,10 @@ class Solution:
                     tmp_sum = nums[start] + nums[end]
                     if tmp_sum == target:
                         tmp_list.append([nums[start], nums[end]])
-                        while start < end and nums[start] == nums[start + 1]: start += 1
-                        while start < end and nums[end] == nums[end - 1]: end -= 1
+                        while start < end and nums[start] == nums[start + 1]:
+                            start += 1
+                        while start < end and nums[end] == nums[end - 1]:
+                            end -= 1
                         start += 1
                         end -= 1
                     elif tmp_sum < target:
@@ -42,5 +47,6 @@ class Solution:
 
         res = k_sum(0, n - 1, 4, target)
         return res
-# @lc code=end
 
+
+# @lc code=end

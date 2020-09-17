@@ -5,9 +5,14 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
-    def updateBoard(self, board: List[List[str]], click: List[int]) -> List[List[str]]:
-        coordinate = [(0, 1), (0, -1), (-1, 0), (1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
+    def updateBoard(self, board: List[List[str]],
+                    click: List[int]) -> List[List[str]]:
+        coordinate = [(0, 1), (0, -1), (-1, 0), (1, 0), (1, 1), (1, -1),
+                      (-1, 1), (-1, -1)]
 
         m, n = len(board), len(board[0])
 
@@ -22,7 +27,7 @@ class Solution:
                     continue
                 if board[new_row][new_col] == 'M':
                     cnt += 1
-            
+
             return cnt
 
         # def dfs(board, row, col):
@@ -65,5 +70,6 @@ class Solution:
             elif board[row][col] == 'M':
                 board[row][col] = 'X'
         return board
-# @lc code=end
 
+
+# @lc code=end

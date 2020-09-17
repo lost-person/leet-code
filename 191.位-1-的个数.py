@@ -4,6 +4,7 @@
 # [191] 位1的个数
 #
 
+
 # @lc code=start
 class Solution:
     def hammingWeight(self, n: int) -> int:
@@ -24,5 +25,6 @@ class Solution:
             res += 1
             n &= n - 1
         return res
-# @lc code=end
 
+
+# @lc code=end

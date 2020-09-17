@@ -4,14 +4,23 @@
 # [13] 罗马数字转整数
 #
 
+
 # @lc code=start
 class Solution:
     def romanToInt(self, s: str) -> int:
         res = 0
         if not s:
             return res
-        
-        roman_dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
+
+        roman_dict = {
+            'M': 1000,
+            'D': 500,
+            'C': 100,
+            'L': 50,
+            'X': 10,
+            'V': 5,
+            'I': 1
+        }
         prev_num = roman_dict.get(s[0])
 
         n = len(s)
@@ -24,5 +33,6 @@ class Solution:
             prev_num = num
         res += prev_num
         return res
-# @lc code=end
 
+
+# @lc code=end

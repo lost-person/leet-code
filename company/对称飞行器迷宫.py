@@ -23,11 +23,12 @@ for i in range(n):
     if is_found:
         break
 
-directions = [(1, 0), (0, -1), (-1, 0), (0, 1)] # 上下左右
+directions = [(1, 0), (0, -1), (-1, 0), (0, 1)]  # 上下左右
 
 # bfs
+step = 0
 queue = deque()
-queue.appendleft((si, sj, 5, 0))
+queue.appendleft((si, sj, 5, step))
 
 while queue:
     row, col, cnt, step = queue.pop()
@@ -38,7 +39,7 @@ while queue:
         queue.appendleft((row + 1, col, cnt, step + 1))
     if 0 <= col - 1 < m and matrix[row][col - 1] != '#':
         queue.appendleft((row, col - 1, cnt, step + 1))
-    if 0 <= row -1 < n and matrix[row - 1][col] != '#':
+    if 0 <= row - 1 < n and matrix[row - 1][col] != '#':
         queue.appendleft((row - 1, col, cnt, step + 1))
     if 0 <= col + 1 < m and matrix[row][col + 1] != '#':
         queue.appendleft((row, col + 1, cnt, step + 1))

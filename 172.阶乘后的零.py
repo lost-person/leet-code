@@ -4,6 +4,7 @@
 # [172] 阶乘后的零
 #
 
+
 # @lc code=start
 class Solution:
     def trailingZeroes(self, n: int) -> int:
@@ -12,5 +13,6 @@ class Solution:
             res += n // 5
             n //= 5
         return res
-# @lc code=end
 
+
+# @lc code=end

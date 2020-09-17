@@ -5,17 +5,20 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def canCross(self, stones: List[int]) -> bool:
         n = len(stones)
-        
+
         # # 记忆化回溯
         # memo = [[-1] * n for _ in range(n)]
 
         # def can_Cross(idx: int, jump_size: int):
         #     if memo[idx][jump_size] >= 0:
         #         return memo[idx][jump_size]
-            
+
         #     for i in range(idx + 1, n):
         #         gap = stones[i] - stones[idx]
         #         if jump_size - 1 <= gap <= jump_size + 1:
@@ -23,9 +26,9 @@ class Solution:
         #                 memo[idx][gap] = 1
         #                 return 1
         #     memo[idx][jump_size] = 1 if idx == n - 1 else 0
-        
+
         #     return memo[idx][jump_size]
-        
+
         # return can_Cross(0, 0) == 1
 
         dp = [[False] * n for _ in range(n)]
@@ -40,7 +43,8 @@ class Solution:
                     dp[i][gap - 1] = True
                 if gap + 1 < n:
                     dp[i][gap + 1] = True
-        
-        return any(dp[-1])
-# @lc code=end
 
+        return any(dp[-1])
+
+
+# @lc code=end

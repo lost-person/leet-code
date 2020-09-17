@@ -2,6 +2,7 @@
 
 from collections import Counter
 
+
 class Solution:
     def masterMind(self, solution: str, guess: str) -> List[int]:
         a = sum(i == j for i, j in zip(solution, guess))

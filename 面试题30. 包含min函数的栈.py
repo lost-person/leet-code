@@ -1,5 +1,4 @@
 class MinStack:
-
     def __init__(self):
         """
         initialize your data structure here.
@@ -17,14 +16,14 @@ class MinStack:
     def pop(self) -> None:
         if not self.data:
             raise Exception("no data")
-        
+
         self.help_data.pop()
         return self.data.pop()
 
     def top(self) -> int:
         if not self.data:
             raise Exception("no data")
-        
+
         return self.data[-1]
 
     def min(self) -> int:
@@ -32,7 +31,6 @@ class MinStack:
             raise Exception("no data")
 
         return self.help_data[-1]
-
 
 
 # Your MinStack object will be instantiated and called as such:

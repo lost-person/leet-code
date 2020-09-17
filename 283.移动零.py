@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
@@ -17,5 +20,6 @@ class Solution:
             if nums[i] != 0:
                 nums[last_index], nums[i] = nums[i], nums[last_index]
                 last_index += 1
-# @lc code=end
 
+
+# @lc code=end

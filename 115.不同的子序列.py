@@ -4,6 +4,7 @@
 # [115] 不同的子序列
 #
 
+
 # @lc code=start
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
@@ -15,7 +16,7 @@ class Solution:
 
         for i in range(m):
             dp[i][0] = 1
-        
+
         for i in range(1, m + 1):
             for j in range(1, n + 1):
                 if j > i:
@@ -35,14 +36,15 @@ class Solution:
         #     c = t[i]
         #     nexts[i] = c_dict.get(c, -1)
         #     c_dict[c] = i
-        
+
         # for i in range(m):
         #     c = s[i]
         #     j = c_dict.get(c, -1)
         #     while j >= 0:
         #         dp[j + 1] += dp[j]
         #         j = nexts[j]
-        
-        # return dp[n]
-# @lc code=end
 
+        # return dp[n]
+
+
+# @lc code=end

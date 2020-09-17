@@ -4,13 +4,14 @@
 # [60] 第k个排列
 #
 
+
 # @lc code=start
 class Solution:
     def getPermutation(self, n: int, k: int) -> str:
         f = 1
         for i in range(2, n):
             f *= i
-        nums = list(range(1, n+1))
+        nums = list(range(1, n + 1))
         re = ''
         k -= 1
         while n > 1:
@@ -20,7 +21,8 @@ class Solution:
             nums.pop(index)
             k %= f
             n -= 1
-            f //= n 
+            f //= n
         return re + str(nums[0])
-# @lc code=end
 
+
+# @lc code=end

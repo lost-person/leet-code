@@ -5,12 +5,15 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     # def searchRange(self, nums: List[int], target: int) -> List[int]:
     #     res_list = [-1,-1]
     #     res_list = self.search(nums, target, 0, len(nums) - 1, res_list)
     #     return res_list
-    
+
     # def search(self, nums: List[int], target: int, left: int, right: int, res_list: List[int]):
     #     if left > right:
     #         return res_list
@@ -39,10 +42,10 @@ class Solution:
                 left = mid + 1
             else:
                 right = mid
-            
+
         if nums[left] != target:
             return res
-        
+
         res[0] = left
         if len(nums) == 1:
             res[1] = left
@@ -55,10 +58,11 @@ class Solution:
                 left = mid + 1
             else:
                 right = mid
-        
+
         if nums[left - 1] == target:
             res[1] = left - 1
-        
+
         return res
+
 
 # @lc code=end

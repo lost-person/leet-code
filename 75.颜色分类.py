@@ -5,13 +5,16 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
         p0, cur, p2 = 0, 0, len(nums) - 1
-        
+
         while cur <= p2:
             if nums[cur] == 0:
                 nums[p0], nums[cur] = nums[cur], nums[p0]
@@ -22,6 +25,6 @@ class Solution:
                 p2 -= 1
             else:
                 cur += 1
-        
-# @lc code=end
 
+
+# @lc code=end

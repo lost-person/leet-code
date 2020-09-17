@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def rob(self, nums: List[int]) -> int:
         n = len(nums)
@@ -14,5 +17,6 @@ class Solution:
         for num in nums:
             cur, pre = max(pre + num, cur), cur
         return cur
-# @lc code=end
 
+
+# @lc code=end

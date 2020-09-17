@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
         # if rowIndex == 0: return [1]
@@ -31,7 +34,7 @@ class Solution:
 
         if rowIndex == 0:
             return [1]
-    
+
         result = [0] * (rowIndex + 1)
         for index in range(rowIndex + 1):
             if index == 0:
@@ -39,10 +42,12 @@ class Solution:
             elif index == 1:
                 result[1] = rowIndex
             elif index <= rowIndex >> 1:
-                result[index] = result[index - 1] * (rowIndex - index + 1) // index
+                result[index] = result[index - 1] * (rowIndex - index +
+                                                     1) // index
             else:
                 result[index] = result[rowIndex - index]
-        
-        return result
-# @lc code=end
 
+        return result
+
+
+# @lc code=end

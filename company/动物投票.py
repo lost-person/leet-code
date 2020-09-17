@@ -2,6 +2,7 @@
 
 # 动物投票。每个动物只会投票给自己崇拜的动物或者自身，求每位动物最高的票数。（A_i <= i）
 
+
 def solve():
     n = int(input())
     ans = [0] * (n + 1)
@@ -13,4 +14,6 @@ def solve():
 
     for i in range(1, n + 1):
         print(ans[i])
+
+
 solve()

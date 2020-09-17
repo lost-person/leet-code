@@ -6,17 +6,22 @@
 
 # @lc code=start
 # Definition for a binary tree node.
+from typing import List
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
 
+
 class Solution:
     def generateTrees(self, n: int) -> List[TreeNode]:
-        
         def generate_trees(start, end):
-            if start > end: return [None,]
+            if start > end: return [
+                    None,
+            ]
 
             res = []
             for i in range(start, end + 1):
@@ -30,8 +35,8 @@ class Solution:
                         tree.right = right_tree
                         res.append(tree)
             return res
-        
-        return generate_trees(1, n) if n else []
-        
-# @lc code=end
 
+        return generate_trees(1, n) if n else []
+
+
+# @lc code=end

@@ -4,6 +4,7 @@
 # [226] 翻转二叉树
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -12,6 +13,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         if not root or (not root.left and not root.right):
@@ -19,9 +21,10 @@ class Solution:
 
         left = self.invertTree(root.left)
         right = self.invertTree(root.right)
-        
+
         root.left = right
         root.right = left
         return root
-# @lc code=end
 
+
+# @lc code=end

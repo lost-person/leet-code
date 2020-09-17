@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         # return list(map(int, list(str(int(''.join(map(str, digits))) + 1))))
@@ -14,10 +17,11 @@ class Solution:
             else:
                 digits[i] += 1
                 break
-        
+
         if digits[0] == 0:
             digits.insert(0, 1)
-        
-        return digits
-# @lc code=end
 
+        return digits
+
+
+# @lc code=end

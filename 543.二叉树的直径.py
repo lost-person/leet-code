@@ -4,6 +4,7 @@
 # [543] 二叉树的直径
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -12,10 +13,11 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
         self.res = 1
-        
+
         def depth(node: TreeNode):
             if not node:
                 return 0
@@ -24,7 +26,9 @@ class Solution:
             node_depth = max(left_depth, right_depth) + 1
             self.res = max(self.res, left_depth + right_depth + 1)
             return node_depth
+
         depth(root)
         return self.res - 1
-# @lc code=end
 
+
+# @lc code=end

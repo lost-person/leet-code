@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
         if not matrix or not matrix[0]: return 0
@@ -23,5 +26,6 @@ class Solution:
                     dp[j] = 0
                 prev = tmp
         return max_len * max_len
-# @lc code=end
 
+
+# @lc code=end

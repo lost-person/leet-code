@@ -5,12 +5,15 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         # nums = sorted(nums)
         # res = [[], [nums[0]]]
         # size_before = 1
-        
+
         # for i in range(1, len(nums)):
         #     size = len(res)
         #     if nums[i] != nums[i - 1]:
@@ -22,7 +25,7 @@ class Solution:
         num_dict = dict()
         for num in nums:
             num_dict[num] = num_dict.get(num, 0) + 1
-        
+
         res = [[]]
         for k, v in num_dict.items():
             for subres in res[:]:
@@ -30,5 +33,6 @@ class Solution:
                     res.append(subres + [k] * (i + 1))
 
         return res
-# @lc code=end
 
+
+# @lc code=end

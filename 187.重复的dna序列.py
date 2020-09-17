@@ -5,13 +5,16 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def findRepeatedDnaSequences(self, s: str) -> List[str]:
         # L, n = 10, len(s)
         # res = set()
         # if not s or n < L + 1:
         #     return list(res)
-        
+
         # seen = set()
         # for i in range(n - L + 1):
         #     tmp = s[i: i + L]
@@ -25,15 +28,15 @@ class Solution:
         # L, n = 10, len(s)
         # if n <= L:
         #     return []
-        
+
         # # rolling hash parameters: base a
         # a = 4
-        # aL = pow(a, L) 
-        
+        # aL = pow(a, L)
+
         # # convert string to array of integers
         # to_int = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
         # nums = [to_int.get(s[i]) for i in range(n)]
-        
+
         # h = 0
         # seen, output = set(), set()
         # # iterate over all sequences of length L
@@ -71,12 +74,13 @@ class Solution:
                 bit_mask <<= 2
                 bit_mask |= nums[start + L - 1]
                 bit_mask &= ~(3 << 2 * L)
-            
+
             if bit_mask in seen:
-                output.add(s[start: start + L])
+                output.add(s[start:start + L])
             else:
                 seen.add(bit_mask)
-        
-        return list(output)
-# @lc code=end
 
+        return list(output)
+
+
+# @lc code=end

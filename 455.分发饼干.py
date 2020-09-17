@@ -5,11 +5,14 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def findContentChildren(self, g: List[int], s: List[int]) -> int:
         if not g or not s:
             return 0
-        
+
         g.sort()
         s.sort()
 
@@ -24,5 +27,6 @@ class Solution:
                 j += 1
                 res += 1
         return res
-# @lc code=end
 
+
+# @lc code=end

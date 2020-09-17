@@ -7,6 +7,8 @@
 # @lc code=start
 
 from collections import deque
+from typing import List
+
 
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
@@ -15,27 +17,27 @@ class Solution:
         """
         if not board:
             return
-        
+
         n, m = len(board), len(board[0])
 
         def dfs(x, y):
             if not 0 <= x < n or not 0 <= y < m or board[x][y] != 'O':
                 return
-            
+
             board[x][y] = "A"
             dfs(x + 1, y)
             dfs(x - 1, y)
             dfs(x, y + 1)
             dfs(x, y - 1)
-        
+
         for i in range(n):
             dfs(i, 0)
             dfs(i, m - 1)
-        
+
         for i in range(m - 1):
             dfs(0, i)
             dfs(n - 1, i)
-        
+
         for i in range(n):
             for j in range(m):
                 if board[i][j] == "A":
@@ -45,7 +47,7 @@ class Solution:
 
         if not board:
             return
-        
+
         n, m = len(board), len(board[0])
         que = deque()
         for i in range(n):
@@ -58,14 +60,14 @@ class Solution:
                 que.append((0, i))
             if board[n - 1][i] == "O":
                 que.append((n - 1, i))
-        
+
         while que:
             x, y = que.popleft()
             board[x][y] = "A"
             for mx, my in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
                 if 0 <= mx < n and 0 <= my < m and board[mx][my] == "O":
                     que.append((mx, my))
-        
+
         for i in range(n):
             for j in range(m):
                 if board[i][j] == "A":
@@ -73,5 +75,5 @@ class Solution:
                 elif board[i][j] == "O":
                     board[i][j] = "X"
 
-# @lc code=end
 
+# @lc code=end

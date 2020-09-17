@@ -1,11 +1,13 @@
 # coding = utf-8
+from typing import List
+
 
 class Solution:
     def minNumber(self, nums: List[int]) -> str:
         n = len(nums)
         if n == 1:
             return str(nums[0])
-        
+
         num_list = [[] for _ in range(10)]
 
         # 根据高位判断
@@ -13,12 +15,12 @@ class Solution:
             num = str(num)
             first_num = int(num[0])
             num_list[first_num].append(num)
-        
+
         def quick_sort(data, left, right):
             """自定义快排
             """
             if right - left < 1:
-                return 
+                return
             p = left
             q = right
             temp = data[left]

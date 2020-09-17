@@ -6,6 +6,8 @@
 
 # @lc code=start
 from collections import Counter, defaultdict
+from typing import List
+
 
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
@@ -15,8 +17,9 @@ class Solution:
         not_repeat_points = list(points_dict.keys())
         n = len(not_repeat_points)
         if n == 1: return points_dict[not_repeat_points[0]]
-        
+
         res = 0
+
         # 求最大公约数
         def gcd(x, y):
             if y == 0:
@@ -37,10 +40,12 @@ class Solution:
                 if g != 0:
                     dy //= g
                     dx //= g
-                slope["{}/{}".format(dy, dx)] += points_dict[not_repeat_points[j]]
+                slope["{}/{}".format(dy,
+                                     dx)] += points_dict[not_repeat_points[j]]
 
-            res = max(res, max(slope.values()) + points_dict[not_repeat_points[i]])
+            res = max(res,
+                      max(slope.values()) + points_dict[not_repeat_points[i]])
         return res
 
-# @lc code=end
 
+# @lc code=end

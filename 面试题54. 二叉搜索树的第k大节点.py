@@ -1,5 +1,6 @@
 # coding = utf-8
 
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
@@ -7,12 +8,13 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def kthLargest(self, root: TreeNode, k: int) -> int:
         # 修改中序遍历定义：先右，中根，最后左
         if not root:
             return
-        
+
         # node_list = []
         # cur = root
         # while cur or node_list:

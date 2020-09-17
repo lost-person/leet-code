@@ -6,11 +6,13 @@
 
 # @lc code=start
 from collections import deque
+from typing import List
+
 
 class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
         start = "0000"
-        
+
         deadends = set(deadends)
         if target in deadends:
             return -1
@@ -26,10 +28,10 @@ class Solution:
         seen = {start}
         while queue:
             cur_num, step = queue.popleft()
-            
+
             if cur_num == target: return step
             if cur_num in deadends: continue
-            
+
             step += 1
             for next_num in bfs(cur_num):
                 if next_num not in seen:
@@ -37,5 +39,6 @@ class Solution:
                     queue.append((next_num, step))
 
         return -1
-# @lc code=end
 
+
+# @lc code=end

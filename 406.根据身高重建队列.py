@@ -5,17 +5,21 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
         res = []
 
         if not people or not people[0]:
             return res
-        
-        people.sort(key = lambda x: (-x[0], x[1]))
+
+        people.sort(key=lambda x: (-x[0], x[1]))
         for p in people:
             res.insert(p[1], p)
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end

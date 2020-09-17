@@ -7,7 +7,7 @@ T = int(input())
 for i in range(T):
     n, m, c = map(int, input().split())
     color_list = list(map(int, input().split()))
-    visisted = [[-1] * m for _ in range(n)] # 记录
+    visisted = [[-1] * m for _ in range(n)]  # 记录
 
     res = (n * m + 1) // 2
     flag = True
@@ -15,7 +15,7 @@ for i in range(T):
         if color > res:
             flag = False
             break
-    
+
     if flag:
         print('YES')
     else:

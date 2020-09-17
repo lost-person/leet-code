@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix: return False
@@ -22,7 +25,8 @@ class Solution:
                 low = mid + 1
             else:
                 high = mid - 1
-        
-        return False
-# @lc code=end
 
+        return False
+
+
+# @lc code=end

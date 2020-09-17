@@ -4,6 +4,7 @@
 # [165] 比较版本号
 #
 
+
 # @lc code=start
 class Solution:
     def compareVersion(self, version1: str, version2: str) -> int:
@@ -13,11 +14,11 @@ class Solution:
         def get_next_chunk(version: str, n: int, p: int):
             if p > n - 1:
                 return 0, p
-            
+
             p_end = p
             while p_end < n and version[p_end] != '.':
                 p_end += 1
-            
+
             num = int(version[p:p_end]) if p_end < n else int(version[p:])
             p = p_end + 1
 
@@ -29,5 +30,6 @@ class Solution:
             if num1 != num2:
                 return 1 if num1 > num2 else -1
         return 0
-# @lc code=end
 
+
+# @lc code=end

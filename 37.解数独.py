@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
         """
@@ -13,7 +16,7 @@ class Solution:
         if len(board) == 0:
             return None
         self.solve(board, 0)
-    
+
     def solve(self, board: List[List[str]], row: int) -> bool:
         for i in range(row, 9):
             for j in range(9):
@@ -29,8 +32,8 @@ class Solution:
                     return False
         return True
 
-    
-    def isValid(self, board: List[List[str]], row: int, column: int, number: str) -> bool:
+    def isValid(self, board: List[List[str]], row: int, column: int,
+                number: str) -> bool:
         """
         Check current board
         """
@@ -48,6 +51,5 @@ class Solution:
                 return False
         return True
 
-        
-# @lc code=end
 
+# @lc code=end

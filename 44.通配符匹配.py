@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         """
@@ -32,6 +35,6 @@ class Solution:
                     res[i][j] = False
 
         return res[n][m]
-        
-# @lc code=end
 
+
+# @lc code=end

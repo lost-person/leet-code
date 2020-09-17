@@ -5,16 +5,19 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         if not nums or len(nums) == 1:
             return False
-        
+
         n = len(nums)
         total_sum = sum(nums)
         if total_sum & 1 == 1:
             return False
-        
+
         nums.sort()
         total_sum >>= 1
 
@@ -33,8 +36,8 @@ class Solution:
         for i in range(n):
             for j in range(total_sum, nums[i] - 1, -1):
                 dp[j] = dp[j] or dp[j - nums[i]]
-        
-        return dp[-1]
- 
-# @lc code=end
 
+        return dp[-1]
+
+
+# @lc code=end

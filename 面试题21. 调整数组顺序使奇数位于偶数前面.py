@@ -1,5 +1,8 @@
 # coding = utf-8
 
+from typing import List
+
+
 class Solution:
     def exchange(self, nums: List[int]) -> List[int]:
         n = len(nums)

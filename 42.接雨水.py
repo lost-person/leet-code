@@ -5,12 +5,15 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def trap(self, height: List[int]) -> int:
         res = 0
         if not height or len(height) < 3:
             return 0
-        
+
         n = len(height)
         left, right = 0, n - 1
         max_left, max_right = height[0], height[n - 1]
@@ -25,5 +28,6 @@ class Solution:
                 res += max_right - height[right]
                 right -= 1
         return res
-# @lc code=end
 
+
+# @lc code=end

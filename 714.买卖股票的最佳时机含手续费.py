@@ -5,11 +5,14 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def maxProfit(self, prices: List[int], fee: int) -> int:
         if not prices:
             return 0
-        
+
         d_i_0 = 0
         d_i_1 = float('-inf')
 
@@ -18,5 +21,6 @@ class Solution:
             d_i_0 = max(d_i_0, d_i_1 + price)
             d_i_1 = max(d_i_1, tmp - price - fee)
         return d_i_0
-# @lc code=end
 
+
+# @lc code=end

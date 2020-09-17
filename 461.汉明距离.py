@@ -4,6 +4,7 @@
 # [461] 汉明距离
 #
 
+
 # @lc code=start
 class Solution:
     def hammingDistance(self, x: int, y: int) -> int:
@@ -18,5 +19,6 @@ class Solution:
             res += 1
             xor = xor & (xor - 1)
         return res
-# @lc code=end
 
+
+# @lc code=end

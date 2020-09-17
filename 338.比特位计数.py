@@ -5,25 +5,27 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def countBits(self, num: int) -> List[int]:
         # 191 扩展
         res = [0]
         if not num:
             return res
-        
+
         # def count_bit(n: int):
         #     cnt = 0
         #     while n:
         #         cnt += 1
         #         n &= n - 1
         #     return cnt
-        
-        
+
         # for i in range(1, num + 1):
         #     res.append(count_bit(i))
         # return res
-        
+
         # dp + 最高有效位
         # dp[i + b] = dp[i] + 1, b = 2^m > i
         # i = 0
@@ -48,5 +50,6 @@ class Solution:
         for i in range(1, num + 1):
             res[i] = res[i & (i - 1)] + 1
         return res
-# @lc code=end
 
+
+# @lc code=end

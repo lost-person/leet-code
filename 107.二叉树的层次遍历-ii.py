@@ -6,11 +6,15 @@
 
 # @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+from typing import List
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution:
     def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
@@ -21,7 +25,7 @@ class Solution:
         while node_list:
             m = len(node_list)
             tmp = []
-            
+
             for i in range(m):
                 tmp.append(node_list[i].val)
                 if node_list[i].left: node_list.append(node_list[i].left)
@@ -29,7 +33,8 @@ class Solution:
 
             res.insert(0, tmp)
             node_list = node_list[m:]
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end

@@ -5,11 +5,14 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def findMaximumXOR(self, nums: List[int]) -> int:
         if not nums:
             return 0
-        
+
         res = 0
         mask = 0
 
@@ -21,14 +24,15 @@ class Solution:
             # 保留前缀
             for num in nums:
                 s.add(num & mask)
-            
+
             tmp = res | (1 << i)
 
             for prefix in s:
                 if tmp ^ prefix in s:
                     res = tmp
                     break
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end

@@ -6,11 +6,15 @@
 
 # @lc code=start
 # Definition for a binary tree node.
+from typing import List
+
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     def mergeTrees(self, t1: TreeNode, t2: TreeNode) -> TreeNode:
@@ -18,7 +22,7 @@ class Solution:
         #     return t2
         # if not t2:
         #     return t1
-        
+
         # def merge_trees(node, node1, node2):
         #     if not node1 and not node2:
         #         return None
@@ -35,7 +39,7 @@ class Solution:
 
         if not t1:
             return t2
-        
+
         stack = []
         stack.append((t1, t2))
         while stack:
@@ -51,7 +55,8 @@ class Solution:
                 t_0.right = t_1.right
             else:
                 stack.append((t_0.right, t_1.right))
-        
-        return t1
-# @lc code=end
 
+        return t1
+
+
+# @lc code=end

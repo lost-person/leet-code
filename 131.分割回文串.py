@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         res = []
@@ -20,20 +23,20 @@ class Solution:
             for i in range(j):
                 if s[i] == s[j] and (j - i <= 2 or dp[i + 1][j - 1]):
                     dp[i][j] = True
-        
+
         def backtrack(start, length, tmp=[]):
             if start == length:
                 res.append(tmp[:])
                 return
-            
+
             for i in range(start, length):
                 if not dp[start][i]:
                     continue
-                
-                backtrack(i + 1, length, tmp + [s[start: i + 1]])
+
+                backtrack(i + 1, length, tmp + [s[start:i + 1]])
 
         backtrack(0, n, [])
-        return res 
+        return res
+
 
 # @lc code=end
-

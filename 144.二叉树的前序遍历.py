@@ -6,19 +6,25 @@
 
 # @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+from typing import List
+
+
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
         if root is None:
             return []
-        
-        stack, output = [root, ], []
-        
+
+        stack, output = [
+            root,
+        ], []
+
         while stack:
             root = stack.pop()
             if root is not None:
@@ -27,7 +33,8 @@ class Solution:
                     stack.append(root.right)
                 if root.left is not None:
                     stack.append(root.left)
-        
-        return output
-# @lc code=end
 
+        return output
+
+
+# @lc code=end

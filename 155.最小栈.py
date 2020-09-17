@@ -4,6 +4,7 @@
 # [155] 最小栈
 #
 
+
 # @lc code=start
 class MinStack:
 
@@ -76,4 +77,3 @@ class MinStack:
 # param_3 = obj.top()
 # param_4 = obj.getMin()
 # @lc code=end
-

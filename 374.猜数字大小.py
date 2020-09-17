@@ -10,6 +10,7 @@
 # @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
 # def guess(num: int) -> int:
 
+
 class Solution:
     def guessNumber(self, n: int) -> int:
         if n < 1: return 0
@@ -22,6 +23,6 @@ class Solution:
             if guess_res == 0: return mid
             elif guess_res == 1: left = mid + 1
             else: right = mid
-        
-# @lc code=end
 
+
+# @lc code=end

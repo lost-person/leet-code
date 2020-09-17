@@ -5,21 +5,25 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         if not numbers:
             return [0, 0]
-        
+
         left, right = 0, len(numbers) - 1
-        while left < right:            
+        while left < right:
             if numbers[left] == target - numbers[right]:
                 return [left + 1, right + 1]
 
             elif numbers[left] < target - numbers[right]:
                 left += 1
-            
+
             else:
                 right -= 1
         return [0, 0]
-# @lc code=end
 
+
+# @lc code=end

@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
         if not triangle: return 0
@@ -14,8 +17,9 @@ class Solution:
         for i in range(m - 1, -1, -1):
             row_list = triangle[i]
             for j in range(len(row_list)):
-               dp[j] = min(dp[j], dp[j + 1]) + row_list[j]
-        
-        return dp[0]
-# @lc code=end
+                dp[j] = min(dp[j], dp[j + 1]) + row_list[j]
 
+        return dp[0]
+
+
+# @lc code=end

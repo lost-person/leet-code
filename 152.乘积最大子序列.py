@@ -5,11 +5,14 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         if not nums:
             return 0
-        
+
         res = float('-inf')
         imax, imin = 1, 1
 
@@ -19,7 +22,8 @@ class Solution:
             imax = max(imax * num, num)
             imin = min(imin * num, num)
             res = max(res, imax)
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end

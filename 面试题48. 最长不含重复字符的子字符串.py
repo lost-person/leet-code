@@ -1,10 +1,11 @@
 # coding = utf-8
 
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if not s:
             return 0
-        
+
         n = len(s)
         if n == 1:
             return n

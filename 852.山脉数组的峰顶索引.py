@@ -5,10 +5,13 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def peakIndexInMountainArray(self, arr: List[int]) -> int:
         if not arr: return 0
-        
+
         n = len(arr)
         if n < 3: return 0
 
@@ -19,8 +22,8 @@ class Solution:
                 left = mid + 1
             else:
                 right = mid
-       
+
         return left
 
-# @lc code=end
 
+# @lc code=end

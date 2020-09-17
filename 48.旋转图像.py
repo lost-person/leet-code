@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
         """
@@ -19,11 +22,10 @@ class Solution:
                 tmp = matrix[i][j]
                 matrix[i][j] = matrix[j][i]
                 matrix[j][i] = tmp
-        
+
         # reverse
         for i, m in enumerate(matrix):
             matrix[i] = m[::-1]
 
-        
-# @lc code=end
 
+# @lc code=end

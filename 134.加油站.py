@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
         last_gas = 0
@@ -26,7 +29,8 @@ class Solution:
                 step += 1
             if step == n:
                 return start
-        
-        return -1
-# @lc code=end
 
+        return -1
+
+
+# @lc code=end

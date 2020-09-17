@@ -7,16 +7,18 @@
 # @lc code=start
 import math
 from collections import deque
+
+
 class Solution:
     def numSquares(self, n: int) -> int:
         if n < 4: return n
 
         def isSquare(n: int) -> bool:
             sq = int(math.sqrt(n))
-            return sq*sq == n
-        
+            return sq * sq == n
+
         if isSquare(n): return 1
-        candidates = {i ** 2 for i in range(1, int(n ** 0.5 + 1))}
+        candidates = {i**2 for i in range(1, int(n**0.5 + 1))}
         queue = deque([n])
         step = 0
         while queue:
@@ -59,6 +61,4 @@ class Solution:
         # return 3
 
 
-
 # @lc code=end
-

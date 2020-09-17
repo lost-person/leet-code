@@ -5,15 +5,17 @@
 #
 
 # @lc code=start
-from collections import deque
+from typing import List
+
+
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         if not amount:
             return 1
-        
+
         if not coins:
             return 0
-        
+
         dp = [0] * (amount + 1)
         dp[0] = 1
         for coin in coins:
@@ -21,5 +23,5 @@ class Solution:
                 dp[i] += dp[i - coin]
         return dp[amount]
 
-# @lc code=end
 
+# @lc code=end

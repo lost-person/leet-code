@@ -5,8 +5,12 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    def merge(self, nums1: List[int], m: int, nums2: List[int],
+              n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
@@ -21,6 +25,6 @@ class Solution:
                 nums1[tail] = nums1[m]
                 m -= 1
             tail -= 1
-        
-# @lc code=end
 
+
+# @lc code=end

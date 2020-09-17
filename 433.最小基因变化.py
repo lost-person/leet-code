@@ -6,6 +6,9 @@
 
 # @lc code=start
 from collections import deque
+from typing import List
+
+
 class Solution:
     def minMutation(self, start: str, end: str, bank: List[str]) -> int:
         if not bank or end not in bank: return -1
@@ -24,7 +27,7 @@ class Solution:
                 return -1
             if len(set1) > len(set2):
                 return bfs(set2, set1, bank_set, not direction, cnt)
-            
+
             bank_set = bank_set - set1 - set2
             done = False
             new_set = set()
@@ -41,12 +44,11 @@ class Solution:
 
                         if tmp_word in bank_set:
                             new_set.add(tmp_word)
-            
+
             return bfs(new_set, set2, bank_set, direction, cnt + 1)
-        
+
         return bfs(set1, set2, bank_set, True, 1)
-        
-        
+
         # gene_set = set(bank)
 
         # def get_neightbors(word: str):
@@ -61,16 +63,16 @@ class Solution:
         #     return neightbors
 
         # self.res = float('inf')
-        
+
         # def bfs(start, end):
         #     visisted = set()
         #     visisted.add(start)
-            
+
         #     path = [start]
         #     queue = deque()
         #     queue.append(path[:])
         #     is_found = False
-            
+
         #     while queue:
         #         size = len(queue)
         #         subvisted = set()
@@ -86,7 +88,7 @@ class Solution:
         #                         path.append(neightbor)
         #                         self.res = min(self.res, len(path) - 1)
         #                         path.pop()
-                            
+
         #                     path.append(neightbor)
         #                     queue.append(path[:])
         #                     path.pop()
@@ -103,4 +105,3 @@ class Solution:
 
 
 # @lc code=end
-

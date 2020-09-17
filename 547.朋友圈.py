@@ -5,6 +5,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class UnionFind:
     def __init__(self, n):
         super().__init__()
@@ -20,7 +23,7 @@ class UnionFind:
             self.parent[p] = self.parent[self.parent[p]]
             p = self.parent[p]
         return p
-    
+
     def is_connect(self, p, q):
         return self.find(p) == self.find(q)
 
@@ -36,7 +39,8 @@ class UnionFind:
             self.parent[root_p] = root_q
             self.rank[root_q] += self.rank[root_p]
         self.cnt -= 1
-    
+
+
 class Solution:
     def findCircleNum(self, M: List[List[int]]) -> int:
         if not M or not M[0]: return 0
@@ -50,7 +54,7 @@ class Solution:
             for j in range(i):
                 if M[i][j] == 1:
                     uf.union(i, j)
-        
+
         return uf.get_cnt()
 
         # def dfs(row):
@@ -58,13 +62,12 @@ class Solution:
         #         if M[row][col] == 1 and not visited[col]:
         #             visited[col] = True
         #             dfs(col)
-        
-        
+
         # for row in range(m):
         #     if not visited[row]:
         #         dfs(row)
         #         cnt += 1
-        
+
         # return cnt
         # queue = []
         # for row in range(M):
@@ -79,5 +82,5 @@ class Solution:
         #         cnt += 1
         # return cnt
 
-# @lc code=end
 
+# @lc code=end

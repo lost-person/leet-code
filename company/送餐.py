@@ -1,5 +1,6 @@
 # coding = utf-8
 
+
 def dijstra(n, x, dist, matrix):
     for j in range(1, n + 1):
         dist[j] = matrix[x][j]
@@ -9,12 +10,12 @@ def dijstra(n, x, dist, matrix):
 
     while True:
         t = -1
-        
+
         for i in range(1, n + 1):
             if dist[i] < float("inf") and not visited[i]:
                 if t == -1 or dist[t] > dist[i]:
                     t = i
-        
+
         if t == -1:
             break
 
@@ -23,6 +24,7 @@ def dijstra(n, x, dist, matrix):
             dist[i] = min(dist[i], dist[t] + matrix[t][i])
 
     return dist
+
 
 n, m, T = map(int, input().split())
 

@@ -4,6 +4,7 @@
 # [538] 把二叉搜索树转换为累加树
 #
 
+
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -12,14 +13,16 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def __init__(self):
         super().__init__()
         self.total = 0
+
     def convertBST(self, root: TreeNode) -> TreeNode:
         if not root:
             return root
-        
+
         # morris 变形
         total = 0
         node = root
@@ -51,7 +54,7 @@ class Solution:
         # return root
 
         # total = 0
-        
+
         # node = root
         # stack = []
         # while stack or node:
@@ -71,5 +74,5 @@ class Solution:
 
         # return root
 
-# @lc code=end
 
+# @lc code=end
