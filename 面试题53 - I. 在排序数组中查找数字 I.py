@@ -33,22 +33,20 @@ class Solution:
         # 退出循环时 left = right
         return left - idx1
 
-        def lower_bound(array, left, right, value):
-            while left < right:  # 返回[first, last)内第一个不小于value的值的位置
-                mid = left + ((right - left) >> 1)  # 搜索区间[first, last)不为空
-                if nums[mid] < target:
-                    left = mid + 1
-                else:
-                    right = mid
+        # def lower_bound(array, left, right, value):
+        #     while left < right:  # 返回[first, last)内第一个不小于value的值的位置
+        #         mid = left + ((right - left) >> 1)  # 搜索区间[first, last)不为空
+        #         if array[mid] < target:
+        #             left = mid + 1
+        #         else:
+        #             right = mid
+        #     return left
 
-            return array[left]
-
-        def upper_bound(array, left, right, value):
-            while left < right:  # 返回[first, last)内第一个大于value的值的位置
-                mid = left + ((right - left) >> 1)  # 搜索区间[first, last)不为空
-                if nums[mid] <= target:
-                    left = mid + 1
-                else:
-                    right = mid
-
-            return array[left]
+        # def upper_bound(array, left, right, value):
+        #     while left < right:  # 返回[first, last)内第一个大于value的值的位置
+        #         mid = left + ((right - left) >> 1)  # 搜索区间[first, last)不为空
+        #         if array[mid] <= target:
+        #             left = mid + 1
+        #         else:
+        #             right = mid
+        #     return array[left]
