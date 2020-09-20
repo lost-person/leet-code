@@ -17,25 +17,36 @@ class Solution:
         #     tmp_r = x / r
         # return int(r)
 
-        # 二分法
-        if x == 0:
-            return 0
+        # # 二分法
+        # if x == 0:
+        #     return 0
 
-        left = 1
-        right = x // 2
+        # left = 1
+        # right = x // 2
 
-        while left < right:
-            # 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环
-            # mid = left + (right - left + 1) // 2
-            mid = (left + right + 1) >> 1
-            square = mid * mid
+        # while left < right:
+        #     # 注意：这里一定取右中位数，如果取左中位数，代码可能会进入死循环
+        #     # mid = left + (right - left + 1) // 2
+        #     mid = (left + right + 1) >> 1
+        #     square = mid * mid
 
-            if square > x:
-                right = mid - 1
-            else:
+        #     if square > x:
+        #         right = mid - 1
+        #     else:
+        #         left = mid
+        # # 因为一定存在，因此无需后处理
+        # return left
+
+        left = 0.0, right = x / 2
+        mid = left + (right - left) / 2
+        while abs(mid ** 2 - x) > 1e-5:
+            if mid ** 2 < x:
                 left = mid
-        # 因为一定存在，因此无需后处理
-        return left
+            elif mid ** 2 > x:
+                right = mid
+            else:
+                return mid
+        return mid
 
 
 # @lc code=end
