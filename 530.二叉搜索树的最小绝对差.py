@@ -30,7 +30,6 @@ class Solution:
             
             dfs(node.right)
 
-
         dfs(root)
         return self.res
 # @lc code=end
